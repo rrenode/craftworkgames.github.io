@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Getting started with MonoGame.Extended - MonoGame.Extended</title>
+
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css"
+      crossorigin="anonymous"
+      integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE="
+    />
+    <meta name="x-stylesheet-fallback-test" content="" class="sr-only" />
+    <script>
+      !(function (a, b, c, d) {
+        var e,
+          f = document,
+          g = f.getElementsByTagName("SCRIPT"),
+          h = g[g.length - 1].previousElementSibling,
+          i = f.defaultView && f.defaultView.getComputedStyle ? f.defaultView.getComputedStyle(h) : h.currentStyle;
+        if (i && i[a] !== b) for (e = 0; e < c.length; e++) f.write('<link href="http://www.monogameextended.net/posts/' + c[e] + '" ' + d + "/>");
+      })(
+        "position",
+        "absolute",
+        ["\/lib\/bootstrap\/dist\/css\/bootstrap.min.css"],
+        "rel=\u0022stylesheet\u0022 crossorigin=\u0022anonymous\u0022 integrity=\u0022sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=\u0022 "
+      );
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-17371305-8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-17371305-8");
+    </script>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../css/site.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav class="navbar navbar-dark navbar-expand-lg navbar-dark mge-primary">
+          <a class="navbar-brand" href="../index.html"> <img class="logo" src="../images/monogame-extended-logo.png" alt="MonoGame.Extended" /> MonoGame.Extended </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target=".navbar-collapse"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            *+
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarColor02">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item"><a class="nav-link" href="../posts.html">Blog</a></li>
+              <li class="nav-item"><a class="nav-link" href="http://docs.monogameextended.net/">Documentation</a></li>
+              <li class="nav-item"><a class="nav-link" href="http://community.monogame.net/category/extended">Community</a></li>
+              <li class="nav-item"><a class="nav-link" href="https://www.patreon.com/craftworkgames">Patreon</a></li>
+              <li class="nav-item"><a class="nav-link" href="https://github.com/craftworkgames/MonoGame.Extended">Github</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <div class="container full-height">
+      <main role="main" class="pb-3 full-height">
+        <div class="row">
+          <div class="col-sm-9">
+            <div class="content">
+              <h1>Getting started with MonoGame.Extended</h1>
+              <small class="text-muted">by Dylan Wilson on 16 May 2019</small>
+              <hr />
+              <h2>Quick start</h2>
+              <p>
+                If you're starting a new project I recommend using the <a href="https://github.com/dotnet/templating/wiki/Available-templates-for-dotnet-new">MonoGame (.NET Core) template</a>. If you
+                don't have <code>dotnet</code> installed please download the latest <a href="https://dotnet.microsoft.com/download">.NET Core SDK</a> and follow these steps to create a new project.
+              </p>
+              <ol>
+                <li>
+                  <p>Install the MonoGame <code>dotnet new</code> template.</p>
+                  <pre><code class="language-bash">dotnet new -i &quot;MonoGame.Template.CSharp&quot;
+</code></pre>
+                </li>
+                <li>
+                  <p>Create a new MonoGame project.</p>
+                  <pre><code class="language-bash">mkdir MyGame
+cd MyGame
+dotnet new mgdesktopgl
+</code></pre>
+                </li>
+                <li>
+                  <p>
+                    To create a solution file (<code>.sln</code>) file you can either open the project (<code>.csproj</code>) in Visual Studio and hit <strong>Save All</strong> or you can generate one
+                    with the <code>dotnet</code> tools.
+                  </p>
+                  <pre><code class="language-bash">dotnet new sln
+dotnet sln add MyGame.csproj
+</code></pre>
+                </li>
+                <li>
+                  <p>Add a package reference to MonoGame.Extended.</p>
+                  <pre><code class="language-bash">dotnet add package MonoGame.Extended --version 3.6.0-beta0001
+</code></pre>
+                </li>
+                <li>
+                  <p>Run the game to make sure everything works :)</p>
+                  <pre><code class="language-bash">dotnet run
+</code></pre>
+                </li>
+              </ol>
+              <p>If the quick start doesn't suit your needs or you'd like to know how to install MonoGame.Extended in other scenarios, please read on.</p>
+              <h2>Creating a new MonoGame project</h2>
+              <p>
+                MonoGame.Extended works with any of the MonoGame platform projects that support <strong>.NET Standard 2.0</strong>. I recommend starting with the
+                <strong>MonoGame Cross Platform Desktop Project</strong> that uses OpenGL for rendering because it is compatible with Windows, Mac and Linux.
+              </p>
+              <p><img src="getting-started-with-monogame-extended/monogame-project-templates.jpg" alt="MonoGame project templates" /></p>
+              <p>
+                If you're only targeting Windows, you could also use the <strong>MonoGame Windows Project</strong> that uses DirectX but in my opinion there's really no advantage to limiting yourself
+                to one platform even if you only ever plan to make Windows only games.
+              </p>
+              <p>
+                Of course, you can always choose one of the other project templates to target other platforms (e.g. Android or iOS). Just check to see
+                <a href="https://docs.microsoft.com/en-us/dotnet/standard/net-standard">what version supports .NET Standard 2.0</a>.
+              </p>
+              <h3>.NET Framework</h3>
+              <p>
+                If you <a href="http://www.monogame.net/downloads/">downloaded MonoGame</a> and installed it using the installer chances are that you're familiar with creating new MonoGame projects
+                <a href="http://www.monogame.net/documentation/?page=creating_a_new_project_vs">using one of the project templates</a>. This is okay, however, to install MonoGame.Extended you'll need
+                to change the target framework to one that is <a href="https://docs.microsoft.com/en-us/dotnet/standard/net-standard">compatible with .NET Standard 2.0</a>. I recommend targeting
+                <strong>.NET Framework 4.7.2</strong> or higher.
+              </p>
+              <p><img src="getting-started-with-monogame-extended/set-the-target-framework.jpg" alt="Change the target framework" /></p>
+              <h3>.NET Core</h3>
+              <p>
+                My preferred approach is to create new projects with cra0zy's
+                <a href="https://github.com/dotnet/templating/wiki/Available-templates-for-dotnet-new">MonoGame (.NET Core) template</a> as described in the quick start. There are several advantages
+                to using the .NET Core template.
+              </p>
+              <ul>
+                <li>The project template is light weight and only contains what you need.</li>
+                <li><code>MonoGame.Framework.DesktopGL.Core</code> is added as a NuGet package rather than needing to be installed on your machine.</li>
+                <li>There's also a <code>MonoGame.Content.Builder</code> NuGet package for building content.</li>
+                <li>.NET Core is more modern than .NET Framework and is getting better all the time.</li>
+                <li>It's compatible with .NET Standard 2.0 by default.</li>
+              </ul>
+              <p>Of course, there are some potential downsides to consider.</p>
+              <ul>
+                <li>
+                  Running the game in Visual Studio shows an ugly console window in the background. There are
+                  <a href="https://github.com/AvaloniaUI/Avalonia/wiki/Hide-console-window-for-self-contained-.NET-Core-application">some workarounds</a> to this problem. The simplest is to target
+                  .NET Core 3.0
+                </li>
+                <li>
+                  MonoGame doesn't officially support .NET Core projects yet (they are <a href="https://github.com/cra0zy/MonoGame/tree/core">maintained by cra0zy</a>) and could be a few commits
+                  behind.
+                </li>
+              </ul>
+              <p>Hopefully these minor issues will be resolved in time.</p>
+              <h2>Adding MonoGame.Extended with the NuGet Package Manager</h2>
+              <p>If you're developing with Visual Studio you can find the MonoGame.Extended NuGet packages by using the NuGet Package Manager.</p>
+              <ol>
+                <li>Right click the solution and select <strong>Manage NuGet Packages for Solution...</strong></li>
+                <li>Click the <strong>Browse</strong> tab and search for <code>MonoGame.Extended</code></li>
+                <li>Make sure to check the <strong>Include prerelease</strong> box and set the <strong>Package source</strong> to <code>nuget.org</code></li>
+              </ol>
+              <p><img src="getting-started-with-monogame-extended/nuget-package-manager.jpg" alt="Using the NuGet Package Manager" /></p>
+              <p>Select the packages you'd like to install and press the <strong>Install</strong> button.</p>
+              <h2>Hello World!</h2>
+              <p>To test if everything is working add a <code>using</code> statement to the top of your <code>Game1.cs</code> class.</p>
+              <pre><code class="language-cs">using MonoGame.Extended;
+</code></pre>
+              <p>Then draw a filled rectangle with one of the <code>SpriteBatch</code> extension methods.</p>
+              <pre><code class="language-cs">protected override void Draw(GameTime gameTime)
+{
+    GraphicsDevice.Clear(Color.CornflowerBlue);
+
+    spriteBatch.Begin();
+    spriteBatch.FillRectangle(100, 100, 200, 200, Color.Red);
+    spriteBatch.End();
+
+    base.Draw(gameTime);
+}
+</code></pre>
+              <p>Run the game and you should see a red rectangle!</p>
+              <p><img src="getting-started-with-monogame-extended/hello-monogame-extended.jpg" alt="Hello MonoGame.Extended" /></p>
+
+              <hr />
+            </div>
+
+            <div id="disqus_thread"></div>
+            <script>
+              var disqus_config = function () {
+                this.page.url = "http://www.monogameextended.net/posts/getting-started-with-monogame-extended";
+                this.page.identifier = "getting-started-with-monogame-extended";
+              };
+
+              (function () {
+                // DON'T EDIT BELOW THIS LINE
+                var d = document,
+                  s = d.createElement("script");
+                s.src = "https://monogameextended.disqus.com/embed.js";
+                s.setAttribute("data-timestamp", +new Date());
+                (d.head || d.body).appendChild(s);
+              })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          </div>
+          <div class="col-sm-3 sidebar">
+            <!-- Begin Mailchimp Signup Form -->
+            <link href="http://cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css" />
+            <style type="text/css">
+              #mc_embed_signup {
+                background: #fff;
+                clear: left;
+                font: 14px Helvetica, Arial, sans-serif;
+              }
+              /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+                    We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+            </style>
+            <div class="card">
+              <div class="card-header badge-dark">Subscribe to updates</div>
+              <div id="mc_embed_signup">
+                <form
+                  action="https://craftworkgames.us9.list-manage.com/subscribe/post?u=26237dd6d69373d9a22314547&amp;id=ef23a5d062"
+                  method="post"
+                  id="mc-embedded-subscribe-form"
+                  name="mc-embedded-subscribe-form"
+                  class="validate"
+                  target="_blank"
+                  novalidate
+                >
+                  <div id="mc_embed_signup_scroll">
+                    <div class="mc-field-group">
+                      <label for="mce-EMAIL">Email Address </label>
+                      <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" />
+                    </div>
+                    <div class="mc-field-group">
+                      <label for="mce-FNAME">First Name </label>
+                      <input type="text" value="" name="FNAME" class="" id="mce-FNAME" />
+                    </div>
+                    <div class="mc-field-group">
+                      <label for="mce-LNAME">Last Name </label>
+                      <input type="text" value="" name="LNAME" class="" id="mce-LNAME" />
+                    </div>
+                    <div id="mce-responses" class="clear">
+                      <div class="response" id="mce-error-response" style="display: none;"></div>
+                      <div class="response" id="mce-success-response" style="display: none;"></div>
+                    </div>
+                    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_26237dd6d69373d9a22314547_ef23a5d062" tabindex="-1" value="" /></div>
+                    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary text-center" /></div>
+                  </div>
+                </form>
+              </div>
+              <script type="text/javascript" src="http://s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+              <script type="text/javascript">
+                (function ($) {
+                  window.fnames = new Array();
+                  window.ftypes = new Array();
+                  fnames[0] = "EMAIL";
+                  ftypes[0] = "email";
+                  fnames[1] = "FNAME";
+                  ftypes[1] = "text";
+                  fnames[2] = "LNAME";
+                  ftypes[2] = "text";
+                  fnames[3] = "ADDRESS";
+                  ftypes[3] = "address";
+                  fnames[4] = "PHONE";
+                  ftypes[4] = "phone";
+                })(jQuery);
+                var $mcj = jQuery.noConflict(true);
+              </script>
+            </div>
+            <!--End mc_embed_signup-->
+
+            <div class="card">
+              <a href="https://www.gamedevmarket.net/?ally=yJRl98tX" target="_blank">
+                <img src="../images/game-dev-market-banner.jpg" alt="gamedevmarket.net" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+      <div class="container text-center">
+        &copy; 2019 - Craftwork Games
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" crossorigin="anonymous" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="></script>
+    <script>
+      window.jQuery ||
+        document.write(
+          "\u003Cscript src=\u0022\/lib\/jquery\/dist\/jquery.min.js\u0022 crossorigin=\u0022anonymous\u0022 integrity=\u0022sha256-FgpCb\/KJQlLNfOu91ta32o\/NMZxltwRo8QtmkMRdAu8=\u0022\u003E\u003C\/script\u003E"
+        );
+    </script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+      integrity="sha256-E/V4cWE4qvAeO5MOhjtGtqDzPndRO1LBk8lJ/PR7CA4="
+    ></script>
+    <script>
+      (window.jQuery && window.jQuery.fn && window.jQuery.fn.modal) ||
+        document.write(
+          "\u003Cscript src=\u0022\/lib\/bootstrap\/dist\/js\/bootstrap.bundle.min.js\u0022 crossorigin=\u0022anonymous\u0022 integrity=\u0022sha256-E\/V4cWE4qvAeO5MOhjtGtqDzPndRO1LBk8lJ\/PR7CA4=\u0022\u003E\u003C\/script\u003E"
+        );
+    </script>
+
+    <script src="../js/site.js@v=dLGP40S79Xnx6GqUthRF6NWvjvhQ1nOvdVSwaNcgG18"></script>
+  </body>
+</html>

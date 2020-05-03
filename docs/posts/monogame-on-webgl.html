@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MonoGame on WebGL - MonoGame.Extended</title>
+
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css"
+      crossorigin="anonymous"
+      integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE="
+    />
+    <meta name="x-stylesheet-fallback-test" content="" class="sr-only" />
+    <script>
+      !(function (a, b, c, d) {
+        var e,
+          f = document,
+          g = f.getElementsByTagName("SCRIPT"),
+          h = g[g.length - 1].previousElementSibling,
+          i = f.defaultView && f.defaultView.getComputedStyle ? f.defaultView.getComputedStyle(h) : h.currentStyle;
+        if (i && i[a] !== b) for (e = 0; e < c.length; e++) f.write('<link href="http://www.monogameextended.net/posts/' + c[e] + '" ' + d + "/>");
+      })(
+        "position",
+        "absolute",
+        ["\/lib\/bootstrap\/dist\/css\/bootstrap.min.css"],
+        "rel=\u0022stylesheet\u0022 crossorigin=\u0022anonymous\u0022 integrity=\u0022sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=\u0022 "
+      );
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-17371305-8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-17371305-8");
+    </script>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../css/site.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav class="navbar navbar-dark navbar-expand-lg navbar-dark mge-primary">
+          <a class="navbar-brand" href="../index.html"> <img class="logo" src="../images/monogame-extended-logo.png" alt="MonoGame.Extended" /> MonoGame.Extended </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target=".navbar-collapse"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            *+
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarColor02">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item"><a class="nav-link" href="../posts.html">Blog</a></li>
+              <li class="nav-item"><a class="nav-link" href="http://docs.monogameextended.net/">Documentation</a></li>
+              <li class="nav-item"><a class="nav-link" href="http://community.monogame.net/category/extended">Community</a></li>
+              <li class="nav-item"><a class="nav-link" href="https://www.patreon.com/craftworkgames">Patreon</a></li>
+              <li class="nav-item"><a class="nav-link" href="https://github.com/craftworkgames/MonoGame.Extended">Github</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <div class="container full-height">
+      <main role="main" class="pb-3 full-height">
+        <div class="row">
+          <div class="col-sm-9">
+            <div class="content">
+              <h1>MonoGame on WebGL</h1>
+              <small class="text-muted">by Dylan Wilson on 07 May 2019</small>
+              <hr />
+              <p>In short, there's 4 basic steps to getting MonoGame up and running on your web site.</p>
+              <ol>
+                <li>Install the <code>dotnet new</code> project template</li>
+                <li>Create a new MonoGame WebGL project</li>
+                <li>Put the JavaScript files on your website</li>
+                <li>Setup a content workflow</li>
+              </ol>
+              <p>
+                In the following tutorial I'm going to take you through the steps I took to get MonoGame working on an ASP.NET Core website. Hopefully providing enough detail that you can get it
+                working on your website.
+              </p>
+              <h2>A word of caution</h2>
+              <p>
+                MonoGame WebGL is in alpha! If you plan to use it for a production project make sure you're aware that there are
+                <a href="https://github.com/cra0zy/MonoGame/projects/1">some limitations</a>.
+              </p>
+              <blockquote>
+                <p>
+                  This is an alpha release of MonoGames web version, there are several parts unimplemented, as such, do not expect everything to work out of the box. Feel free to report any issues you
+                  find on the MonoGame GitHub issue tracker, I'll prioritize implementing stuff that you request.
+                </p>
+              </blockquote>
+              <blockquote>
+                <p>The web version of MonoGame requires WebGL 2 and has support for Chrome, Firefox, Opera and Vivaldi web browsers.</p>
+              </blockquote>
+              <blockquote>
+                <p>
+                  Currently the web version is getting compiled to JS using Bridge.NET, this is however only a temporary solution and we'll switch to using WebAssembly (WASM) once C# -&gt; WASM
+                  conversion gets to a more stable point. This will greatly improve performance.
+                </p>
+              </blockquote>
+              <p>That said, what you can do with it already is pretty neat. Checkout the <a href="http://www.monogame.net/webdemo/">Platformer 2D demo</a> on the MonoGame website.</p>
+              <p>Without further ado, let's get started.</p>
+              <h2>Install the MonoGame Bridge template</h2>
+              <p>
+                The <a href="https://www.nuget.org/packages/MonoGame.Template.Bridge.CSharp/">MonoGame.Template.Bridge.CSharp NuGet package</a> is a project template for <code>dotnet new</code> that
+                cra0zy created from his MonoGame fork. To get started let's install the template so we can create our project.
+              </p>
+              <pre><code>dotnet new --install MonoGame.Template.Bridge.CSharp
+</code></pre>
+              <p>Once the template is installed you should see a new template called <code>MonoGame WebGL Game</code> or <code>mgbridge</code> in the list.</p>
+              <h2>Create the MonoGame WebGL project</h2>
+              <p>
+                Once you've got the template installed make a new directory for your project and generate the files. I'm going to call mine <code>MonoGameOnWebGL</code> . You can find my
+                implementation <a href="https://github.com/craftworkgames/MonoGameExtended.Net-Samples/tree/master/monogame-on-webgl">on github</a>.
+              </p>
+              <pre><code>mkdir MonoGameOnWebGL
+cd MonoGameOnWebGL
+dotnet new mgbridge
+</code></pre>
+              <p>
+                After running the above commands you should see a handful of files including a <code>MonoGameOnWebGL.csproj</code> project file. Next, open the project file in Visual Studio or your
+                favorite IDE.
+              </p>
+              <p>
+                You might have noticed there's no solution (<code>.sln</code>) file in the directory. That's normal for projects created with <code>dotnet new</code>. The first time you save the
+                project in Visual Studio it will offer to create a solution file for you.
+              </p>
+              <h2>Building the project</h2>
+              <p>At first glance, the new project looks a bit like a normal MonoGame project with a <code>Game1.cs</code> class and a <code>Content.mgcb</code> file.</p>
+              <p><img src="monogame-on-webgl/monogame-webgl-solution.jpg" alt="MonoGame on WebGL solution" /></p>
+              <p>
+                There's also a weird looking <code>App.cs</code> file and a <code>bridge.json</code> file. If you try to run the project at this point you'll be surprised to find that we're actually
+                looking at a class library and it can't be started directly.
+              </p>
+              <p>
+                So what's going on here? Well, those extra files are part of <a href="https://bridge.net/">Bridge.NET</a>, an open source C# to JavaScript compiler. When you compile this library the
+                C# code is getting transpiled into a bunch of JavaScript files so they can be run in a browser.
+              </p>
+              <p>
+                Take a look in the <code>bin\Debug\net47</code> folder after building and you'll see a bunch of <code>.js</code> files along with an <code>index.html</code> file. Double click the
+                <code>index.html</code> file and if all goes well, you should see the familiar cornflower blue rendered in your browser. Jinkies!
+              </p>
+              <p><img src="monogame-on-webgl/cornflower-blue-in-a-browser.jpg" alt="Cornflower Blue on the web" /></p>
+              <h2>Putting it on an ASP.NET Core website</h2>
+              <p>
+                We've got the basics out of the way but it turns out if you try and do anything useful, like say, loading a texture you'll probably run into some issues. This is because most browsers
+                (except Firefox) won't allow &quot;cross origin requests&quot; when you're running from the local file system.
+              </p>
+              <p>To rectify this, let's get ourselves a real website.</p>
+              <p>
+                Technically speaking, you can use any kind of website framework you like. After all, it's just JavaScript and HTML. For the purpose of this tutorial I'll be using ASP.NET Core which,
+                to be honest, has a few challenges.
+              </p>
+              <p>
+                First, <a href="https://docs.microsoft.com/en-us/visualstudio/get-started/csharp/tutorial-aspnet-core-ef-step-02?view=vs-2019">add a new ASP.NET Core Web Application project</a> to the
+                solution. I called mine <strong>MonoGameOnAspNetCore</strong>.
+              </p>
+              <p>
+                Next, we need to setup dependencies between the two projects. My first reaction to this problem was to add the <strong>MonoGameOnWebGL</strong> project as a reference to web
+                application. Ordinarily that should work but because we're mixing target frameworks, <code>net472</code> and <code>netcoreapp2.2</code> things get a little hairy.
+              </p>
+              <p>
+                Fortunately, the projects only have a &quot;soft&quot; dependency in the sense that we need our JavaScript to be compiled <em>before</em> we can run the website. Using Visual Studio
+                there's a little trick we can do to make this happen without actually adding a &quot;hard&quot; reference dependency between them.
+              </p>
+              <ol>
+                <li>Right click the solution and select <strong>Project Dependencies...</strong></li>
+                <li>In the dialog, make sure the <strong>MonoGameOnAspNetCore</strong> project depends on the <strong>MonoGameOnWebGL</strong> project.</li>
+              </ol>
+              <p><img src="monogame-on-webgl/project-dependencies-trick.jpg" alt="Project Dependencies Trick" /></p>
+              <p>This will force the <strong>MonoGameOnWebGL</strong> project to be compiled before the website if we make any changes to it.</p>
+              <p>
+                Now, we need to make it so that the JavaScript files are copied into our website so that we can use them on the web pages. To do this, edit the <code>bridge.json</code> file and change
+                the output folder to somewhere in the <code>wwwroot</code> folder. While we're at it, lets disable the generation of the <code>index.html</code> file since we won't need it anymore.
+                For example:
+              </p>
+              <pre><code class="language-json">{
+  &quot;output&quot;: &quot;../MonoGameOnAspNetCore/wwwroot/monogameonwebgl&quot;,
+  &quot;html&quot;: {
+    &quot;disabled&quot;: true
+  },
+  ...
+}
+</code></pre>
+              <p>Compile the web application and voila, we have the JavaScript files ready to go in our web application.</p>
+              <p>Finally, we can include the JavaScript files into whatever pages we want to render the MonoGame canvas.</p>
+              <pre><code class="language-html">&lt;script src=&quot;\monogameonwebgl\bridge.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;\monogameonwebgl\bridge.console.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;\monogameonwebgl\bridge.meta.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;\monogameonwebgl\MonoGame.Framework.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;\monogameonwebgl\MonoGame.Framework.meta.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;\monogameonwebgl\MonoGameOnWebGL.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;\monogameonwebgl\MonoGameOnWebGL.meta.min.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+              <h2>Loading Content</h2>
+              <p>The final challenge is loading content. This is a 2 part problem.</p>
+              <h4>Copy content with a post build step</h4>
+              <p>
+                The first problem is that the MonoGame Content Builder is building the content in the <strong>MonoGameOnWebGL</strong> project but we need that content somewhere in the
+                <code>wwwroot</code> folder of our website.
+              </p>
+              <p>
+                There might be more than one way to solve this problem. I chose to copy the XNB files to the <code>content</code> folder in <code>wwwroot</code> as a post build step. To be honest,
+                this solution feels a little hacky but it's the simplest solution I could think of so I rolled with it.
+              </p>
+              <p><img src="monogame-on-webgl/post-build-step.jpg" alt="Copy XNB files as a post build step" /></p>
+              <pre><code class="language-bash">robocopy Content/bin/DesktopGL/Content/ ../MonoGameOnAspNetCore/wwwroot/content /s
+</code></pre>
+              <h4>Allow XNB files as static content</h4>
+              <p>
+                By default, an ASP.NET Core website is not configured to allow XNB files to be downloaded with it's static file handler. To enable this we need to setup a file extension content type
+                provider.
+              </p>
+              <pre><code class="language-cs">var provider = new FileExtensionContentTypeProvider 
+{ 
+  Mappings = { [&quot;.xnb&quot;] = &quot;application/xnb&quot; } 
+};
+app.UseStaticFiles(new StaticFileOptions { ContentTypeProvider = provider });
+</code></pre>
+              <p>And that's it. We're finally able to run MonoGame in most of the leading web browsers.</p>
+              <h2>Conclusion</h2>
+              <p>
+                Despite being in development with an alpha status running MonoGame in a web browser is certainly possible. Once you understand what's going on under the hood it's fairly
+                straightforward to get things up and running on any website as static content.
+              </p>
+              <p>Although there are some limitations it could be very useful to be able to run a demo of your game or write interactive tutorials.</p>
+              <h2>References</h2>
+              <ul>
+                <li><a href="http://community.monogame.net/t/monogame-inside-your-web-browser/10918">MonoGame inside your web browser</a></li>
+                <li><a href="http://community.monogame.net/t/monogame-for-web-alpha-release/11019">MonoGame for Web (Alpha Release)</a></li>
+                <li><a href="https://github.com/MonoGame/MonoGame.WebDemo">MonoGame Web Demo</a></li>
+                <li><a href="https://bridge.net/">Getting started with Bridge.NET</a></li>
+                <li><a href="https://github.com/cra0zy/MonoGame/projects/1">cra0zy's WebGL Missing Stuff</a></li>
+              </ul>
+
+              <hr />
+            </div>
+
+            <div id="disqus_thread"></div>
+            <script>
+              var disqus_config = function () {
+                this.page.url = "http://www.monogameextended.net/posts/monogame-on-webgl";
+                this.page.identifier = "monogame-on-webgl";
+              };
+
+              (function () {
+                // DON'T EDIT BELOW THIS LINE
+                var d = document,
+                  s = d.createElement("script");
+                s.src = "https://monogameextended.disqus.com/embed.js";
+                s.setAttribute("data-timestamp", +new Date());
+                (d.head || d.body).appendChild(s);
+              })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          </div>
+          <div class="col-sm-3 sidebar">
+            <!-- Begin Mailchimp Signup Form -->
+            <link href="http://cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css" />
+            <style type="text/css">
+              #mc_embed_signup {
+                background: #fff;
+                clear: left;
+                font: 14px Helvetica, Arial, sans-serif;
+              }
+              /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+                    We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+            </style>
+            <div class="card">
+              <div class="card-header badge-dark">Subscribe to updates</div>
+              <div id="mc_embed_signup">
+                <form
+                  action="https://craftworkgames.us9.list-manage.com/subscribe/post?u=26237dd6d69373d9a22314547&amp;id=ef23a5d062"
+                  method="post"
+                  id="mc-embedded-subscribe-form"
+                  name="mc-embedded-subscribe-form"
+                  class="validate"
+                  target="_blank"
+                  novalidate
+                >
+                  <div id="mc_embed_signup_scroll">
+                    <div class="mc-field-group">
+                      <label for="mce-EMAIL">Email Address </label>
+                      <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" />
+                    </div>
+                    <div class="mc-field-group">
+                      <label for="mce-FNAME">First Name </label>
+                      <input type="text" value="" name="FNAME" class="" id="mce-FNAME" />
+                    </div>
+                    <div class="mc-field-group">
+                      <label for="mce-LNAME">Last Name </label>
+                      <input type="text" value="" name="LNAME" class="" id="mce-LNAME" />
+                    </div>
+                    <div id="mce-responses" class="clear">
+                      <div class="response" id="mce-error-response" style="display: none;"></div>
+                      <div class="response" id="mce-success-response" style="display: none;"></div>
+                    </div>
+                    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_26237dd6d69373d9a22314547_ef23a5d062" tabindex="-1" value="" /></div>
+                    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary text-center" /></div>
+                  </div>
+                </form>
+              </div>
+              <script type="text/javascript" src="http://s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+              <script type="text/javascript">
+                (function ($) {
+                  window.fnames = new Array();
+                  window.ftypes = new Array();
+                  fnames[0] = "EMAIL";
+                  ftypes[0] = "email";
+                  fnames[1] = "FNAME";
+                  ftypes[1] = "text";
+                  fnames[2] = "LNAME";
+                  ftypes[2] = "text";
+                  fnames[3] = "ADDRESS";
+                  ftypes[3] = "address";
+                  fnames[4] = "PHONE";
+                  ftypes[4] = "phone";
+                })(jQuery);
+                var $mcj = jQuery.noConflict(true);
+              </script>
+            </div>
+            <!--End mc_embed_signup-->
+
+            <div class="card">
+              <a href="https://www.gamedevmarket.net/?ally=yJRl98tX" target="_blank">
+                <img src="../images/game-dev-market-banner.jpg" alt="gamedevmarket.net" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+      <div class="container text-center">
+        &copy; 2019 - Craftwork Games
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" crossorigin="anonymous" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="></script>
+    <script>
+      window.jQuery ||
+        document.write(
+          "\u003Cscript src=\u0022\/lib\/jquery\/dist\/jquery.min.js\u0022 crossorigin=\u0022anonymous\u0022 integrity=\u0022sha256-FgpCb\/KJQlLNfOu91ta32o\/NMZxltwRo8QtmkMRdAu8=\u0022\u003E\u003C\/script\u003E"
+        );
+    </script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+      integrity="sha256-E/V4cWE4qvAeO5MOhjtGtqDzPndRO1LBk8lJ/PR7CA4="
+    ></script>
+    <script>
+      (window.jQuery && window.jQuery.fn && window.jQuery.fn.modal) ||
+        document.write(
+          "\u003Cscript src=\u0022\/lib\/bootstrap\/dist\/js\/bootstrap.bundle.min.js\u0022 crossorigin=\u0022anonymous\u0022 integrity=\u0022sha256-E\/V4cWE4qvAeO5MOhjtGtqDzPndRO1LBk8lJ\/PR7CA4=\u0022\u003E\u003C\/script\u003E"
+        );
+    </script>
+
+    <script src="../js/site.js@v=dLGP40S79Xnx6GqUthRF6NWvjvhQ1nOvdVSwaNcgG18"></script>
+  </body>
+</html>
