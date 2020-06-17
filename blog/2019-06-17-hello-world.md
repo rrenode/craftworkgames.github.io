@@ -2,7 +2,6 @@
 id: hello-world
 title: Hello World
 author: Lucas Girouard-Stranks
-author_title: lithiumtoast
 author_url: https://github.com/lithiumtoast
 author_image_url: https://avatars1.githubusercontent.com/u/519592?s=460&v=4
 tags: []
