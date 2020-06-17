@@ -5,7 +5,7 @@ module.exports = {
   baseUrl: '/',
   favicon: 'img/favicon.ico',
   organizationName: 'craftworkgames', // Usually your GitHub org/user name.
-  projectName: 'website', // Usually your repo name.
+  projectName: 'craftworkgames.github.io', // Usually your repo name.
   themeConfig: {
     navbar: {
       title: 'MonoGame.Extended',
