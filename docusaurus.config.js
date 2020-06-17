@@ -1,8 +1,8 @@
 module.exports = {
   title: 'MonoGame.Extended',
   tagline: 'Extensions to make MonoGame more awesome',
-  url: 'craftworkgames.github.io',
-  baseUrl: '/',
+  url: 'https://craftworkgames.github.io',
+  baseUrl: '/website/',
   favicon: 'img/favicon.ico',
   organizationName: 'craftworkgames', // Usually your GitHub org/user name.
   projectName: 'website', // Usually your repo name.
