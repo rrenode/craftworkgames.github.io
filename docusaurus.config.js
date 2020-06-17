@@ -79,8 +79,7 @@ module.exports = {
           homePageId: 'about/introduction',
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl:
-            'https://github.com/craftworkgames/website/tree/master',
+          editUrl: null
         },
         blog: {
           showReadingTime: true,
