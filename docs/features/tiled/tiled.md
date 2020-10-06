@@ -26,18 +26,18 @@ Install-Package MonoGame.Extended.Tiled
 ## Usage
 
 We start by including the `Tiled` namespaces.
-```csharp
+```cs
 using MonoGame.Extended.Tiled;
 using MonoGame.Extended.Tiled.Renderers;
 ```
 Next we define our `Tiledmap` and `TiledMapRenderer`
-```csharp
+```
 private TiledMap _tiledMap;
 private TiledMapRenderer _tiledMapRenderer;
 ```
 
 Which we then initalize in the LoadContent function.
-```csharp
+```java
 protected override void LoadContent()
 {
     _tiledMap = Content.Load<TiledMap>("samplemap");
@@ -49,7 +49,7 @@ protected override void LoadContent()
 
 To finally render and tick the map, we call `mapRenderer.Update();` and `mapRenderer.Draw();` in their respective methods.
 
-```csharp
+```cs
 protected override void Update(GameTime gameTime)
 {
     _tiledMapRenderer.Update(gameTime);
@@ -57,7 +57,7 @@ protected override void Update(GameTime gameTime)
 }
 ```
 
-```c#
+```cs
 protected override void Draw(GameTime gameTime)
 {
     // Clear the screen
@@ -79,20 +79,20 @@ protected override void Draw(GameTime gameTime)
 The game now renders the `TiledMap`. The next step is to move through the map with a `Camera`.
 
 We start by including the `Camera` namespaces.
-```csharp
+```cs
 using MonoGame.Extended;
 using MonoGame.Extended.ViewportAdapters;
 ```
 
 Next we define our Camera
 
-```csharp
+```cs
 private OrthographicCamera _camera;
 ```
 
 Which we then initalize in the Initialize function.
 
-```csharp
+```cs
 protected override void Initialize()
 {
     base.Initialize();
@@ -103,13 +103,13 @@ protected override void Initialize()
 
 We need to tell the Camera where to look. To do this, we declare the following field.
 
-```csharp
+```cs
 private Vector2 _cameraPosition;
 ```
 
 We update this field with the following function
 
-```csharp
+```cs
 private void MoveCamera(GameTime gameTime)
 {
     float speed = 200 * gameTime.GetElapsedSeconds();
@@ -126,7 +126,7 @@ private void MoveCamera(GameTime gameTime)
 ```
 
 Which we then use in the `Update` function
-```csharp
+```cs
 protected override void Update(GameTime gameTime)
 {
     _tiledMapRenderer.Update(gameTime);
@@ -140,7 +140,7 @@ protected override void Update(GameTime gameTime)
 
 To render the map with our `Camera`, we call the Draw function with the Camera's ViewMatrix as follows.
 
-```c#
+```cs
 protected override void Draw(GameTime gameTime)
 {
     // Clear the screen

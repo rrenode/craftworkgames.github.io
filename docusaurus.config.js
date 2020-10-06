@@ -68,6 +68,12 @@ module.exports = {
         },
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Craftwork Games`,
+      
+    },
+    prism: {
+      additionalLanguages: ['csharp'],
+      theme: require('prism-react-renderer/themes/github'),
+      darkTheme: require('prism-react-renderer/themes/vsDark')
     },
   },
   presets: [
