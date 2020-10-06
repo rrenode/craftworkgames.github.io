@@ -10,7 +10,18 @@ The word originally comes from the English word inbetweening which means somethi
 
 ## Usage
 
-First we declare a Player class whose `Position`
+MonoGame.Extended.Tweenig is distributed via NuGet packages. You can add the NuGet package to your C# project through your IDE of choice (Visual Studio, Xamarin Studio, Rider, etc) or through the Command Line Interface (CLI) using the dotnet command.
+
+```
+Install-Package MonoGame.Extended.Tweening
+```
+
+We start by including the `Tweening` namespace.
+```csharp
+using MonoGame.Extended.Tweening;
+```
+
+Next we declare a Player class whose `Position`
 Property we are going to tween.
 ```csharp
 class Player
