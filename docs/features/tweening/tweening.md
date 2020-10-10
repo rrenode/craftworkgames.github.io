@@ -6,7 +6,7 @@ sidebar_label: Tweening
 
 Tweening is the process of providing an animated image with multiple images per second, giving it a smoother image quality.
 The word originally comes from the English word inbetweening which means something like stopping in between. 
-`MonoGame.Extended.Tweening` enables you to smoothly transition properties of an object in the gameworld, such as position, size, or opacity.
+`MonoGame.Extended.Tweening` enables you to smoothly transition properties of an object in the game world, such as position, size, or opacity.
 
 ## Usage
 
@@ -21,7 +21,7 @@ We start by including the `Tweening` namespace.
 using MonoGame.Extended.Tweening;
 ```
 
-Next we declare a Player class whose `Position`
+Next, we declare a Player class whose `Position`
 Property we are going to tween.
 ```csharp
 class Player
@@ -30,14 +30,14 @@ class Player
 }
 ```
 
-Next we instantiate an instance of the Tweener and Player class.
+Next, we instantiate an instance of the Tweener and Player class.
 ```csharp
 private readonly Tweener _tweener = new Tweener();
 private readonly Player _player = new Player() { Position = new Vector2(200, 50) };
 ```
 
 Then we order the Tweener to tween the position.
-The Tween method requires a target object and an expression that refers to a Property of that object.
+The Tween method requires a target object and an expression that refers to a property of that object.
 ```csharp
 _tweener.TweenTo(target: _player, expression: player => _player.Position, toValue: new Vector2(550, 50), duration: 2, delay: 1)
                 .RepeatForever(repeatDelay: 0.2f)
@@ -45,7 +45,7 @@ _tweener.TweenTo(target: _player, expression: player => _player.Position, toValu
                 .Easing(EasingFunctions.Linear);
 ```
 
-Next we add the Tweener to the update loop
+Next, we add the Tweener to the update loop
 ```csharp
 protected override void Update(GameTime gameTime)
 {

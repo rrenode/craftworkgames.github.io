@@ -8,15 +8,14 @@ sidebar_label: Tiled
 # Tiled
 The `MonoGame.Extended.Tiled` library loads and renders maps created with the popular [Tiled Map Editor](http://www.mapeditor.org/).
 
-Tiled is an [open sourced](https://github.com/bjorn/tiled) general purpose tile map editor for all tile-based games, such as RPGs, platformers or Breakout clones. Tiled lets you easily design and view tile maps, and through the `Monogame.Extended.Tiled` package, you can load and display a map generated with Tiled in MonoGame
+Tiled is an [open sourced](https://github.com/bjorn/tiled) general purpose tile map editor for all tile-based games, such as RPGs or platformers.
 
 # Using the TiledMap in your game
 
-The Tiled Assets used in the documentation can be downloaded [Here](./assets.zip)
+The Assets used in the documentation can be downloaded [Here](./assets.zip)
 
 ## Installation
-To load a TiledMap into your project, you first need to add it to your `ContentManager`, and in order to compile the tile map for use in `MonoGame` you must add a reference to the pipeline tool.
-Instructions to do so can be found [Here](/docs/getting-started/installation)
+o load a TiledMap into your project, you first need to add it to your `ContentManager`, and to compile the tilemap for use in `MonoGame` you must add a reference to the pipeline tool. Instructions to do so can be found [Here](/docs/getting-started/installation)
 
 [MonoGame.Extended.Tiled](https://www.nuget.org/packages/MonoGame.Extended.Tiled/) is distributed via NuGet packages. You can add the NuGet package to your C# project through your IDE of choice (Visual Studio, Xamarin Studio, Rider, etc) or through the Command Line Interface (CLI) using the dotnet command.
 ```
@@ -30,13 +29,13 @@ We start by including the `Tiled` namespaces.
 using MonoGame.Extended.Tiled;
 using MonoGame.Extended.Tiled.Renderers;
 ```
-Next we define our `Tiledmap` and `TiledMapRenderer`
+Next, we define our `Tiledmap` and `TiledMapRenderer`
 ```
 private TiledMap _tiledMap;
 private TiledMapRenderer _tiledMapRenderer;
 ```
 
-Which we then initalize in the LoadContent function.
+Which we then initialize in the LoadContent function.
 ```java
 protected override void LoadContent()
 {
@@ -64,7 +63,7 @@ protected override void Draw(GameTime gameTime)
     GraphicsDevice.Clear(Color.Black);
 
     // Setting the sampler state to `SamplerState.PointClamp` is recommended to remove gaps between the tiles when rendering
-    _spriteBatch.Begin(samplerState: SamplerState.PointClamp);
+    _spriteBatch.Begin(SpriteSortMode.Immediate, samplerState: SamplerState.PointClamp);
     
     _tiledMapRenderer.Draw();
 
@@ -76,7 +75,7 @@ protected override void Draw(GameTime gameTime)
 
 ## Adding a Camera
 
-The game now renders the `TiledMap`. The next step is to move through the map with a `Camera`.
+The game now renders the `TiledMap`. The next step is to navigate through the map with a `Camera`.
 
 We start by including the `Camera` namespaces.
 ```cs
@@ -84,13 +83,13 @@ using MonoGame.Extended;
 using MonoGame.Extended.ViewportAdapters;
 ```
 
-Next we define our Camera
+Next, we define our Camera
 
 ```cs
 private OrthographicCamera _camera;
 ```
 
-Which we then initalize in the Initialize function.
+Which we then initialize in the Initialize function.
 
 ```cs
 protected override void Initialize()
@@ -147,7 +146,7 @@ protected override void Draw(GameTime gameTime)
     GraphicsDevice.Clear(Color.Black);
 
     // Setting the sampler state to `SamplerState.PointClamp` is recommended to remove gaps between the tiles when rendering
-    _spriteBatch.Begin(samplerState: SamplerState.PointClamp);
+    _spriteBatch.Begin(SpriteSortMode.Immediate, samplerState: SamplerState.PointClamp);
     
     _tiledMapRenderer.Draw(_camera.GetViewMatrix());
 
