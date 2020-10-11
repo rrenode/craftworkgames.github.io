@@ -13,7 +13,7 @@ module.exports = {
         alt: 'MonoGame.Extended',
         src: 'img/logo.svg',
       },
-      links: [
+      items: [
         {
           to: 'docs/',
           activeBasePath: 'docs',
@@ -68,6 +68,12 @@ module.exports = {
         },
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Craftwork Games`,
+      
+    },
+    prism: {
+      additionalLanguages: ['csharp'],
+      theme: require('prism-react-renderer/themes/github'),
+      darkTheme: require('prism-react-renderer/themes/vsDark')
     },
   },
   presets: [
@@ -75,16 +81,13 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
-          // It is recommended to set document id as docs home page (`docs/` path).
           homePageId: 'about/introduction',
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          editUrl: null
+          editUrl: 'https://github.com/craftworkgames/craftworkgames.github.io/tree/develop'
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
-          editUrl: null,
+          editUrl: 'https://github.com/craftworkgames/craftworkgames.github.io/tree/develop',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
