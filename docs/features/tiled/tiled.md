@@ -18,12 +18,12 @@ To load a Tiled map you first to compile it using the Content Pipeline. If you h
 
 [MonoGame.Extended.Tiled](https://www.nuget.org/packages/MonoGame.Extended.Tiled/) is distributed via a NuGet package. You can add the NuGet package to your C# project through your IDE of choice (Visual Studio, Xamarin Studio, Rider, etc) or through the Command Line Interface (CLI) using the dotnet command.
 ```
-Install-Package MonoGame.Extended.Tiled
+dotnet add package MonoGame.Extended.Tiled
 ```
 
 ## Example
 
-The assets used in the documentation can be downloaded [here](./assets.zip)
+The assets used in this example can be downloaded [here](./assets.zip)
 
 ### Usage
 
