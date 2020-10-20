@@ -28,7 +28,7 @@ using MonoGame.Extended.Screens;
 using MonoGame.Extended.Screens.Transitions;
 ```
 
-We start by implementing our GameScreens.
+Next, we implement our GameScreens.
 In this example, we use 2 GameScreens with a sprite that follows the Cursor.
 
 ### Screen 1
