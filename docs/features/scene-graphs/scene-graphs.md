@@ -14,7 +14,7 @@ The `SceneGraph` is used to manage the spatial representation of objects. It is 
 
 ## Installation
 
-The `SceneGraphs` are available in the `MonoGame.Extended.SceneGraphs` library.
+`SceneGraphs` is available in the `MonoGame.Extended.SceneGraphs` library.
 [MonoGame.Extended.SceneGraphs](https://www.nuget.org/packages/MonoGame.Extended.SceneGraphs) is distributed via a NuGet package. You can add the NuGet package to your C# project through your IDE of choice (Visual Studio, Xamarin Studio, Rider, etc) or through the Command Line Interface (CLI) using the dotnet command.
 ```
 dotnet add package MonoGame.Extended.SceneGraphs
