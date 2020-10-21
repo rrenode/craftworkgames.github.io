@@ -2,6 +2,6 @@ module.exports = {
   docs: {
     'MonoGame.Extended': ['about/introduction', 'about/principles', 'about/platforms'],
     'Getting Started': ['getting-started/installation'],
-    'Features': ['features/tweening/tweening','features/tiled/tiled', 'features/screen-management/screen-management','features/scene-graphs/scene-graphs']
+    'Features': ['features/tweening/tweening','features/tiled/tiled', 'features/screen-management/screen-management','features/scene-graphs/scene-graphs', 'features/particles/particles']
   },
 };
