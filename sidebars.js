@@ -10,7 +10,8 @@ module.exports = {
       'features/particles/particles',
       'features/object-pooling/object-pooling',
       'features/input/input',
-      'features/graphics/graphics'
+      'features/graphics/graphics',
+      'features/entities/entities'
     ]
   },
 };
