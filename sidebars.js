@@ -11,7 +11,8 @@ module.exports = {
       'features/object-pooling/object-pooling',
       'features/input/input',
       'features/graphics/graphics',
-      'features/entities/entities'
+      'features/entities/entities',
+      'features/collections/collections',
     ]
   },
 };
