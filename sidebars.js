@@ -14,6 +14,7 @@ module.exports = {
       'features/entities/entities',
       'features/collections/collections',
       'features/bitmap-font/bitmap-font',
+      'features/cameras/cameras',
     ]
   },
 };
