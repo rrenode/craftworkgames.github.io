@@ -21,11 +21,13 @@ module.exports = {
           position: 'left',
         },
         {to: 'blog', label: 'Blog', position: 'left'},
+        {to: 'faq', label: 'FAQ', position: 'left'},
         {
           href: 'https://github.com/craftworkgames/MonoGame.Extended',
           label: 'GitHub',
           position: 'right',
         },
+        
       ],
     },
     footer: {
