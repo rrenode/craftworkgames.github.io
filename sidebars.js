@@ -13,6 +13,7 @@ module.exports = {
       'features/graphics/graphics',
       'features/entities/entities',
       'features/collections/collections',
+      'features/bitmap-font/bitmap-font',
     ]
   },
 };
