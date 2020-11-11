@@ -21,11 +21,11 @@ To load a Tiled map you first to compile it using the Content Pipeline. If you h
 dotnet add package MonoGame.Extended.Tiled
 ```
 
-## Example
+## Usage
 
+:::info
 The assets used in this example can be downloaded [here](./assets.zip)
-
-### Usage
+:::
 
 We start by including the `Tiled` namespaces.
 
