@@ -22,7 +22,9 @@ dotnet add package MonoGame.Extended.SceneGraphs
 
 ## Usage
 
+:::info
 The assets used in this example can be downloaded [here](./assets.zip)
+:::
 
 We start by including the required namespaces.
 
