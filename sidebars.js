@@ -16,6 +16,7 @@ module.exports = {
       'features/bitmap-font/bitmap-font',
       'features/cameras/cameras',
       'features/animations/animations',
+      'features/collision/collision',
     ]
   },
 };
