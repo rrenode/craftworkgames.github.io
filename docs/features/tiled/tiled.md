@@ -125,8 +125,13 @@ private Vector2 GetMovementDirection()
     {
         movementDirection += Vector2.UnitX;
     }
-    movementDirection.Normalize(); 
-
+    
+    // Can't normalize the zero vector so test for it before normalizing
+    if (movementDirection != Vector2.Zero)
+    {
+        movementDirection.Normalize(); 
+    }
+    
     return movementDirection;
 }
 
