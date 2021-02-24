@@ -69,7 +69,7 @@ protected override void Update(GameTime gameTime)
 }
 ```
 
-Last but not least, there'll be times when you want to convert from screen coordinates to world coordinates and visa-vera.  For example, if you want to know which sprite is under the mouse you'll need to convert the mouse position back into the world position that was used to position the sprite in the first place.
+Last but not least, there'll be times when you want to convert from screen coordinates to world coordinates and vice-versa.  For example, if you want to know which sprite is under the mouse you'll need to convert the mouse position back into the world position that was used to position the sprite in the first place.
 ```csharp
 var mouseState = Mouse.GetState();
 _worldPosition = _camera.ScreenToWorld(new Vector2(mouseState.X, mouseState.Y));
