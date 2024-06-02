@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmonogame_extended_website=self.webpackChunkmonogame_extended_website||[]).push([[647],{7121:(e,s,n)=>{n.r(s),n.d(s,{default:()=>o});n(6540);var r=n(4164),t=n(1213),a=n(7559),d=n(2831),u=n(781),c=n(4848);function o(e){return(0,c.jsx)(t.e3,{className:(0,r.A)(a.G.wrapper.docsPages),children:(0,c.jsx)(u.A,{children:(0,d.v)(e.route.routes)})})}}}]);
