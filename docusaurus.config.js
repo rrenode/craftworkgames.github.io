@@ -1,93 +1,109 @@
-module.exports = {
+import { themes as prismThemes } from 'prism-react-renderer';
+
+/** @type {import('@docusaurus/types').Config} */
+const config = {
   title: 'MonoGame.Extended',
   tagline: 'Extensions to make MonoGame more awesome',
-  url: 'https://craftworkgames.github.io',
-  baseUrl: '/',
   favicon: 'img/favicon.ico',
-  organizationName: 'craftworkgames', // Usually your GitHub org/user name.
-  projectName: 'craftworkgames.github.io', // Usually your repo name.
-  themeConfig: {
-    navbar: {
-      title: 'MonoGame.Extended',
-      logo: {
-        alt: 'MonoGame.Extended',
-        src: 'img/logo.svg',
-      },
-      items: [
-        {
-          to: 'docs/',
-          activeBasePath: 'docs',
-          label: 'Docs',
-          position: 'left',
-        },
-        {to: 'blog', label: 'Blog', position: 'left'}
-      ],
-    },
-    footer: {
-      style: 'dark',
-      links: [
-        {
-          title: 'Learn',
-          items: [
-            {
-              label: 'Documentation',
-              to: 'docs/',
-            }
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'MonoGame Forums',
-              href: 'http://community.monogame.net/category/extended',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discord.gg/BVXNYUf',
-            }
-          ],
-        },
-        {
-          title: 'More',
-          items: [
-            {
-              label: 'Blog',
-              to: 'blog',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/craftworkgames/MonoGame.Extended',
-            },
-          ],
-        },
-      ],
-      copyright: `Copyright © ${new Date().getFullYear()} Craftwork Games`,
-      
-    },
-    prism: {
-      additionalLanguages: ['csharp'],
-      theme: require('prism-react-renderer/themes/github'),
-      darkTheme: require('prism-react-renderer/themes/vsDark')
-    },
+  url: 'https://monogameextended.net',
+  baseUrl: '/',
+  organizationName: 'craftworkgames',
+  projectName: 'craftworkgames.github.io',
+  onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'warn',
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en'],
   },
+
   presets: [
     [
-      '@docusaurus/preset-classic',
-      {
+      'classic',
+      /** @type {import('@docusaurus/preset-classic').Options} */
+      ({
         docs: {
-          homePageId: 'about/introduction',
-          sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: 'https://github.com/craftworkgames/craftworkgames.github.io/tree/develop'
+          sidebarPath: './sidebars.js',
+          editUrl: 'https://github.com/craftworkgames/craftworkgames.github.io/tree/develop/',
         },
         blog: {
           showReadingTime: true,
-          editUrl: 'https://github.com/craftworkgames/craftworkgames.github.io/tree/develop',
+          editUrl: 'https://github.com/craftworkgames/craftworkgames.github.io/tree/develop/',
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: './src/css/custom.css',
         },
-      },
+      }),
     ],
   ],
+
+  themeConfig:
+    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+    ({
+      // Replace with your project's social card
+      image: 'img/monogame-extended-social-card.png',
+      navbar: {
+        title: 'MonoGame.Extended',
+        logo: {
+          alt: 'My Site Logo',
+          src: 'img/logo.svg',
+        },
+        items: [
+          {
+            type: 'docSidebar',
+            sidebarId: 'docs',
+            position: 'left',
+            label: 'Docs',
+          },
+          { to: '/blog', label: 'Blog', position: 'left' },
+          {
+            href: 'https://github.com/craftworkgames/MonoGame.Extended',
+            label: 'GitHub',
+            position: 'right',
+          },
+        ],
+      },
+      footer: {
+        style: 'dark',
+        links: [
+          {
+            title: 'Learn',
+            items: [
+              {
+                label: 'Tutorial',
+                to: '/docs/',
+              },
+            ],
+          },
+          {
+            title: 'Community',
+            items: [
+              {
+                label: 'Discord',
+                href: 'https://discord.gg/FvZ8Z7EzPJ',
+              }
+            ],
+          },
+          {
+            title: 'More',
+            items: [
+              {
+                label: 'Blog',
+                to: '/blog',
+              },
+              {
+                label: 'GitHub',
+                href: 'https://github.com/craftworkgames/MonoGame.Extended',
+              },
+            ],
+          },
+        ],
+        copyright: `Copyright © ${new Date().getFullYear()} Craftwork Games.`,
+      },
+      prism: {
+        theme: prismThemes.github,
+        darkTheme: prismThemes.dracula,
+      },
+    }),
 };
+
+export default config;

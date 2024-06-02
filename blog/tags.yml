@@ -1,0 +1,8 @@
+updates:
+  label: Updates
+  permalink: /updates
+  description: Updates to the MonoGame.Extended library.
+releases:
+  label: Releases
+  permalink: /releases
+  description: New releases of MonoGame.Extended.
