@@ -44,8 +44,8 @@ const config = {
       navbar: {
         title: 'MonoGame.Extended',
         logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          alt: 'MonoGame.Extended Logo',
+          src: 'img/logo.png',
         },
         items: [
           {
@@ -70,7 +70,7 @@ const config = {
             items: [
               {
                 label: 'Tutorial',
-                to: '/docs/',
+                to: '/docs/about/introduction/',
               },
             ],
           },
