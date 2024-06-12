@@ -4,10 +4,30 @@
         <title>MonoGame.Extended Blog</title>
         <link>https://monogameextended.net/blog</link>
         <description>MonoGame.Extended Blog</description>
-        <lastBuildDate>Sun, 02 Jun 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 12 Jun 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Update Status 2024-06-12]]></title>
+            <link>https://monogameextended.net/blog/update-2024-06-12</link>
+            <guid>https://monogameextended.net/blog/update-2024-06-12</guid>
+            <pubDate>Wed, 12 Jun 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Hi everyone,]]></description>
+            <content:encoded><![CDATA[<p>Hi everyone,</p>
+<p>I wanted to take a moment and give a report on some of the progress made so far in getting version 4.0 officially released.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="current-status">Current Status<a class="hash-link" aria-label="Direct link to Current Status" title="Direct link to Current Status" href="https://monogameextended.net/blog/update-2024-06-12#current-status">​</a></h2>
+<p>If you take a look at the <a href="https://github.com/craftworkgames/MonoGame.Extended/milestone/8" target="_blank" rel="noopener noreferrer">v4.0.0 Milestone</a> page, you can see we are now at 55% completed</p>
+<p><img decoding="async" loading="lazy" alt="4.0.0 Milestone 55% Completed" src="https://monogameextended.net/assets/images/milestone-55-7f47251367acf0c27e1dff1848c3ae5d.png" width="897" height="383" class="img_ev3q"></p>
+<p>If you'd like to checkout the list of issues that have been worked through so far, you can view them <a href="https://github.com/craftworkgames/MonoGame.Extended/issues?q=is%3Aissue%20is%3Aclosed%20project%3Acraftworkgames%2F6" target="_blank" rel="noopener noreferrer">here</a>.</p>
+<p>A lot of the remaining issues here could be closed with better documentation, which is going to come in the last leg of this sprint. However, with the current pace, the current deadline of end of June is looking good.  If you'd like to get involved in helping resolve the backlog of issues, please do. Be sure to checkout the <a href="https://github.com/craftworkgames/MonoGame.Extended/blob/develop/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">Contributing Guidelines</a> and fee free to contact me on discord with any questions.</p>
+<p>And with that status report out of the way, I wanted to touch on some other subjects</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="repository-changes">Repository Changes<a class="hash-link" aria-label="Direct link to Repository Changes" title="Direct link to Repository Changes" href="https://monogameextended.net/blog/update-2024-06-12#repository-changes">​</a></h2>
+<p><strong>MonoGame.Extended</strong> is an extension of <strong>MonoGame</strong>.  With this thought in mind, I have begun to restructure the project some, as many may have already noticed.  The reason behind this is that I feel things in Monogame.Extended should be placed in logical places that match types they are working with in MonoGame.  This keeps the source code structure similar to MonoGame which is beneficial for users working from source between both projects.</p>
+<p>What do I mean by this though?  Well, one example is the <code>RectangleExtensions</code>.  Previously it was placed in <code>MonoGame.Extended.Math</code>  However <code>Rectangle</code> in MonoGame exits in the root namespace, not in a <code>Math</code> namespace.  So <code>RectangleExtensions</code> will be moved to the project root to match the similar structure.  Some other changes, like <code>TextureRegion2D</code> is currently located in the <code>MonoGame.Extended.TextureAtlases</code> directory/namespace. At first, this seems like a logical fit, but a <code>TextureRegion2D</code> is a region of a <code>Texture2D</code>.  Atlases just use them, you don't have to have an atlas to use a <code>TextureRegion2D</code>.  So because they are more locally related to the <code>Texture2D</code> in MonoGame, they will be moved to a similar directory/namespace (<code>MonoGame.Extended.Graphic</code>).</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="in-conclusion">In Conclusion<a class="hash-link" aria-label="Direct link to In Conclusion" title="Direct link to In Conclusion" href="https://monogameextended.net/blog/update-2024-06-12#in-conclusion">​</a></h2>
+<p>I know no one like change, and changes like this may seem superfluous, but I do believe it will be a better user experience moving forward with 4.0.  However, I do value community feedback, so please give me your thoughts and feedback on this in the comment section at the end of this document.  We're halfway there to the 4.0.0 release.</p>]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[MonoGame.Extended Is Back]]></title>
             <link>https://monogameextended.net/blog/mongame-extended-is-back</link>

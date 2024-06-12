@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmonogame_extended_website=self.webpackChunkmonogame_extended_website||[]).push([[472],{5513:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Update Status 2024-06-12","permalink":"/blog/update-2024-06-12","unlisted":false},{"title":"MonoGame.Extended Is Back","permalink":"/blog/mongame-extended-is-back","unlisted":false}]}')}}]);
