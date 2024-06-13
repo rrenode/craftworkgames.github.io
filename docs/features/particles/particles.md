@@ -555,4 +555,4 @@ new AgeModifier()
 ```
 **Result**
 
-![ScaleInterpolator](ScaleInterpolator.gif)
+![ScaleInterpolator](scaleInterpolator.gif)
