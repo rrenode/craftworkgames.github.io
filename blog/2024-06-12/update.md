@@ -2,7 +2,7 @@
 slug: update-2024-06-12
 title: Update Status 2024-06-12
 authors: aris
-tags: []
+tags: ['4.0']
 enableComments: true
 ---
 
