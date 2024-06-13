@@ -158,7 +158,7 @@ The BoxUniform profile evenly distributes the particles over the edge of a box
 ```cs
 Profile.BoxUniform(150,300)
 ```
-![BoxUniformProfile](BoxUniformProfile.gif)
+![BoxUniformProfile](./boxUniformProfile.gif)
 
 ### BoxFillProfile
 The BoxFill profile distributes the particles within a box
