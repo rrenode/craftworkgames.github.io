@@ -54,7 +54,7 @@ In the **Export Options** dialog, you can adjust various settings related to the
 - **Textures**: Set this to **PNG**.
 - **File Format**: Any of the available formats can be used, as MonoGame.Extended supports all three. The **Binary** format will produce a smaller file, but it is not human-readable like the XML or Text formats. Since manual editing of the file is typically unnecessary, using the Binary format is advisable.
 
-For the **Alpha**, **Red**, **Green**, and **Blue** channel settings, it is recommended to use the White text with alpha option from the Presets drop-down.
+For the **Alpha**, **Red**, **Green**, and **Blue** channel settings, it is recommended to use the **White text with alpha** option from the **Presets** drop-down.
 
 You can experiment with different settings to see how they affect the output.
 
