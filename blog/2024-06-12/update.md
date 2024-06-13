@@ -2,7 +2,7 @@
 slug: update-2024-06-12
 title: Update Status 2024-06-12
 authors: aris
-tags: ['4.0']
+tags: ['four-oh']
 enableComments: true
 ---
 
