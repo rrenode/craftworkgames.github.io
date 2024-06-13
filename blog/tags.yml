@@ -6,3 +6,12 @@ releases:
   label: Releases
   permalink: /releases
   description: New releases of MonoGame.Extended.
+four-oh:
+  label: Version 4.0
+  permalink: /4.0
+  description: Version 4.0 Related News
+bmfont:
+  label: BitmapFonts
+  permalink: /bitmap-fonts
+  description: Updates on BitmapFont Support
+
