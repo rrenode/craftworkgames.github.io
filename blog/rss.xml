@@ -45,7 +45,7 @@
 <p>What do I mean by this though?  Well, one example is the <code>RectangleExtensions</code>.  Previously it was placed in <code>MonoGame.Extended.Math</code>  However <code>Rectangle</code> in MonoGame exits in the root namespace, not in a <code>Math</code> namespace.  So <code>RectangleExtensions</code> will be moved to the project root to match the similar structure.  Some other changes, like <code>TextureRegion2D</code> is currently located in the <code>MonoGame.Extended.TextureAtlases</code> directory/namespace. At first, this seems like a logical fit, but a <code>TextureRegion2D</code> is a region of a <code>Texture2D</code>.  Atlases just use them, you don't have to have an atlas to use a <code>TextureRegion2D</code>.  So because they are more locally related to the <code>Texture2D</code> in MonoGame, they will be moved to a similar directory/namespace (<code>MonoGame.Extended.Graphic</code>).</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="in-conclusion">In Conclusion<a class="hash-link" aria-label="Direct link to In Conclusion" title="Direct link to In Conclusion" href="https://monogameextended.net/blog/update-2024-06-12/#in-conclusion">​</a></h2>
 <p>I know no one like change, and changes like this may seem superfluous, but I do believe it will be a better user experience moving forward with 4.0.  However, I do value community feedback, so please give me your thoughts and feedback on this in the comment section at the end of this document.  We're halfway there to the 4.0.0 release.</p>]]></content:encoded>
-            <category>4.0</category>
+            <category>Version 4.0</category>
         </item>
         <item>
             <title><![CDATA[MonoGame.Extended Is Back]]></title>
