@@ -19,22 +19,6 @@ To generate the font files and associated textures, you'll need a tool that outp
 
 After extracting the contents of the zip file, you can run the BMFont tool by using either the **bmfont32.exe** or **bmfont64.exe** executable found in the extracted directory.
 
-
-
-
-```csharp
-_bitmapFont = Content.Load<BitmapFont>("my-font");
-```
-Then render some text just like any other string.
-
-```csharp
-_spriteBatch.Begin();
-_spriteBatch.DrawString(_bitmapFont, "Hello World", new Vector2(100, 200), Color.Red);
-_spriteBatch.End();
-```
-
-But before we can do that, we'll need to generate our bitmap font file.
-
 ## The BMFont Main Window
 
 When you first open BMFont, you'll see a screen similar to this:
