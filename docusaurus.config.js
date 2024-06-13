@@ -10,6 +10,7 @@ const config = {
   organizationName: 'craftworkgames',
   projectName: 'craftworkgames.github.io',
   deploymentBranch: 'gh-pages',
+  trailingSlash: true,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   i18n: {
