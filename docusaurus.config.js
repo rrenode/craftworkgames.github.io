@@ -9,6 +9,7 @@ const config = {
   baseUrl: '/',
   organizationName: 'craftworkgames',
   projectName: 'craftworkgames.github.io',
+  deploymentBranch: 'gh-pages',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   i18n: {
