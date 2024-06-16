@@ -5,6 +5,7 @@ authors: aris
 tags: ['four-oh', 'gum', 'ui']
 enableComments: true
 image: ./banner.png
+description: MonoGame.Extended Meets GUM
 ---
 
 ![MonoGame.Extended Logo In GUM Tool](./banner.png)

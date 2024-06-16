@@ -5,7 +5,7 @@ const config = {
   title: 'MonoGame.Extended',
   tagline: 'Extensions to make MonoGame more awesome',
   favicon: 'img/favicon.ico',
-  url: 'https://monogameextended.net',
+  url: 'https://www.monogameextended.net',
   baseUrl: '/',
   organizationName: 'craftworkgames',
   projectName: 'craftworkgames.github.io',
