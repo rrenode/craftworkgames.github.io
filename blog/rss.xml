@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>MonoGame.Extended Blog</title>
-        <link>https://monogameextended.net/blog/</link>
+        <link>https://www.monogameextended.net/blog/</link>
         <description>MonoGame.Extended Blog</description>
         <lastBuildDate>Sat, 15 Jun 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
@@ -10,32 +10,32 @@
         <language>en</language>
         <item>
             <title><![CDATA[MonoGame.Extended Chews GUM]]></title>
-            <link>https://monogameextended.net/blog/monogame-extended-gum/</link>
-            <guid>https://monogameextended.net/blog/monogame-extended-gum/</guid>
+            <link>https://www.monogameextended.net/blog/monogame-extended-gum/</link>
+            <guid>https://www.monogameextended.net/blog/monogame-extended-gum/</guid>
             <pubDate>Sat, 15 Jun 2024 00:00:00 GMT</pubDate>
-            <description><![CDATA[MonoGame.Extended Logo In GUM Tool]]></description>
-            <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" alt="MonoGame.Extended Logo In GUM Tool" src="https://monogameextended.net/assets/images/banner-f90f64060b95adf927ed25ee6a209420.png" width="2376" height="1570" class="img_ev3q"></p>
+            <description><![CDATA[MonoGame.Extended Meets GUM]]></description>
+            <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" alt="MonoGame.Extended Logo In GUM Tool" src="https://www.monogameextended.net/assets/images/banner-f90f64060b95adf927ed25ee6a209420.png" width="2376" height="1570" class="img_ev3q"></p>
 <p>If you've been active in the MonoGame Discord or other community spaces lately, you might have heard of <a href="https://docs.flatredball.com/gum" target="_blank" rel="noopener noreferrer">GUM</a>. GUM is a game UI layout tool created by Victor Chelaru (<a href="https://github.com/vchelaru" target="_blank" rel="noopener noreferrer">@vchelaru</a>) and is used in the engine he maintains, <a href="https://flatredball.com/" target="_blank" rel="noopener noreferrer">FlatRedBall</a>. Recently, it was updated to work as a standalone tool that can be used in any MonoGame project.</p>
 <p>As I review the backlog of issues in MonoGame.Extended and prepare for the library's future, you can probably guess where this post is heading.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="monogameextendedgui">MonoGame.Extended.GUI<a class="hash-link" aria-label="Direct link to MonoGame.Extended.GUI" title="Direct link to MonoGame.Extended.GUI" href="https://monogameextended.net/blog/monogame-extended-gum/#monogameextendedgui">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="monogameextendedgui">MonoGame.Extended.GUI<a class="hash-link" aria-label="Direct link to MonoGame.Extended.GUI" title="Direct link to MonoGame.Extended.GUI" href="https://www.monogameextended.net/blog/monogame-extended-gum/#monogameextendedgui">​</a></h2>
 <p>Initially, a port of Nuclex GUI was made as a GUI solution in MonoGame.Extended. Following that, Dylan, the original creator and maintainer of MonoGame.Extended, began work on the current MonoGame.Extended.Gui library.</p>
-<p><img decoding="async" loading="lazy" alt="Forum Post About Nuclex" src="https://monogameextended.net/assets/images/nuclex-gui-d5a107f0795450ff5c5dd5b957e1fc6b.png" width="1864" height="698" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Forum Post About Nuclex" src="https://www.monogameextended.net/assets/images/nuclex-gui-d5a107f0795450ff5c5dd5b957e1fc6b.png" width="1864" height="698" class="img_ev3q"></p>
 <p>Dylan's original statement that <strong>"It’s quite a big job creating a really solid GUI system."</strong> is very true. Not only is it a big job to create one, but it's also a significant effort to maintain it, fix bugs, and add new features.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="meet-gum">Meet GUM<a class="hash-link" aria-label="Direct link to Meet GUM" title="Direct link to Meet GUM" href="https://monogameextended.net/blog/monogame-extended-gum/#meet-gum">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="meet-gum">Meet GUM<a class="hash-link" aria-label="Direct link to Meet GUM" title="Direct link to Meet GUM" href="https://www.monogameextended.net/blog/monogame-extended-gum/#meet-gum">​</a></h2>
 <p>I've been keeping an eye on Vic's GUM Tool for a while now, and it's a solid tool. GUM consists of two parts: the GUM Layout Engine, which is the code framework, and the GUM Tool.</p>
 <p>The GUM Tool is a WYSIWYG Editor where you can visually create the UI elements for your game.</p>
-<p><img decoding="async" loading="lazy" alt="GUM Tool Editor" src="https://monogameextended.net/assets/images/gum-tool-example-092f22f27f063f13bf96221696fd5fe3.png" width="1532" height="948" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="GUM Tool Editor" src="https://www.monogameextended.net/assets/images/gum-tool-example-092f22f27f063f13bf96221696fd5fe3.png" width="1532" height="948" class="img_ev3q"></p>
 <p>You can export your creations from the editor to a format that can be loaded into MonoGame and used. Alternatively, if you prefer not to use the editor, <strong>you don't have to</strong>. GUM also supports a code-first approach to creating layouts and UI.</p>
 <p>I highly recommend checking it out. Here's the <a href="https://docs.flatredball.com/gum/monogame/setup" target="_blank" rel="noopener noreferrer">MonoGame Setup</a> documentation page for it.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="what-does-this-mean">What Does This Mean?<a class="hash-link" aria-label="Direct link to What Does This Mean?" title="Direct link to What Does This Mean?" href="https://monogameextended.net/blog/monogame-extended-gum/#what-does-this-mean">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="what-does-this-mean">What Does This Mean?<a class="hash-link" aria-label="Direct link to What Does This Mean?" title="Direct link to What Does This Mean?" href="https://www.monogameextended.net/blog/monogame-extended-gum/#what-does-this-mean">​</a></h2>
 <p>As I look forward to the future of MonoGame.Extended, I need to determine how best to maintain and advance the library. To quote Dylan again, <strong>"It’s quite a big job creating a really solid GUI system."</strong> Vic has done this with GUM and done it well.</p>
 <p>After discussing with Vic earlier today, I will begin working with him to integrate GUM into MonoGame.Extended, replacing the current MonoGame.Extended.Gui portion. This means that GUM will become the standard supported UI choice in MonoGame.Extended in the future.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="what-about-monogameextendedgui">What About MonoGame.Extended.Gui?<a class="hash-link" aria-label="Direct link to What About MonoGame.Extended.Gui?" title="Direct link to What About MonoGame.Extended.Gui?" href="https://monogameextended.net/blog/monogame-extended-gum/#what-about-monogameextendedgui">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="what-about-monogameextendedgui">What About MonoGame.Extended.Gui?<a class="hash-link" aria-label="Direct link to What About MonoGame.Extended.Gui?" title="Direct link to What About MonoGame.Extended.Gui?" href="https://www.monogameextended.net/blog/monogame-extended-gum/#what-about-monogameextendedgui">​</a></h2>
 <p><em>Deleted, gone</em>....</p>
 <p>Just kidding. A lot of work has gone into MonoGame.Extended.Gui. From Dylan's initial efforts to the contributions from various contributors, I have great respect for the time and effort invested in it.</p>
 <p>It’s a significant part of MonoGame.Extended’s history, and I wouldn't just discard the work that's been done. Some may still wish to use and contribute to it in the future.</p>
 <p>Therefore, when the time comes, MonoGame.Extended.Gui will be moved out of the main MonoGame.Extended repository into its own separate project, where it can continue to exist and be used by those who prefer it.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="lets-wrap-this-up">Let's Wrap This Up<a class="hash-link" aria-label="Direct link to Let's Wrap This Up" title="Direct link to Let's Wrap This Up" href="https://monogameextended.net/blog/monogame-extended-gum/#lets-wrap-this-up">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="lets-wrap-this-up">Let's Wrap This Up<a class="hash-link" aria-label="Direct link to Let's Wrap This Up" title="Direct link to Let's Wrap This Up" href="https://www.monogameextended.net/blog/monogame-extended-gum/#lets-wrap-this-up">​</a></h2>
 <p>In conclusion, the focus of the UI portion of MonoGame.Extended will shift to using GUM UI. The existing MonoGame.Extended.Gui project will be moved to its own repository, where it can be maintained separately.</p>
 <p>If you have a moment, I encourage you to check out <a href="https://docs.flatredball.com/gum" target="_blank" rel="noopener noreferrer">GUM</a>. It truly is an amazing tool, and I look forward to its integration into the MonoGame.Extended ecosystem.</p>
 <p>If you have any questions or concerns, please let me know in the comments below or on Discord. Have a great weekend, everyone.</p>
@@ -46,8 +46,8 @@
         </item>
         <item>
             <title><![CDATA[BitmapFont Updates]]></title>
-            <link>https://monogameextended.net/blog/bmfont-update/</link>
-            <guid>https://monogameextended.net/blog/bmfont-update/</guid>
+            <link>https://www.monogameextended.net/blog/bmfont-update/</link>
+            <guid>https://www.monogameextended.net/blog/bmfont-update/</guid>
             <pubDate>Thu, 13 Jun 2024 00:00:00 GMT</pubDate>
             <description><![CDATA[BMFont support has had a small update in MonoGame.Extended.]]></description>
             <content:encoded><![CDATA[<p>BMFont support has had a small update in MonoGame.Extended.</p>
@@ -56,7 +56,7 @@
 <p>With <a href="https://github.com/craftworkgames/MonoGame.Extended/pull/887" target="_blank" rel="noopener noreferrer">PR #887</a> all three export formats are now supported both when loading the file directly at runtime or if you want to use the Content Pipeline to preprocess the file.</p>
 <p>This change is significant because it means that you can use any tool that can export a <code>.fnt</code> file in the AngleCode Bitmap Font file format, such as <a href="https://libgdx.com/wiki/tools/hiero" target="_blank" rel="noopener noreferrer">libGDX Hiero</a> which can be used cross platform.  Previously only the AngleCode BMFont application could be used, which was Windows only, unless you setup WINE on macOS or Linux to run it.</p>
 <p>Another benefit of this is that Hiero supports exporting the fonts as Signed Distance Field, which means I can start implementing SDF Font Rendering support.</p>
-<p>The <a href="https://monogameextended.net/docs/features/bitmap-font/">BitmapFont Feature</a> article has also been updated to better explain how to use the feature.</p>
+<p>The <a href="https://www.monogameextended.net/docs/features/bitmap-font/">BitmapFont Feature</a> article has also been updated to better explain how to use the feature.</p>
 <p>That's all for now, hope everyone is having a great week.</p>
 <p>- Aris</p>]]></content:encoded>
             <category>BitmapFonts</category>
@@ -64,43 +64,43 @@
         </item>
         <item>
             <title><![CDATA[Update Status 2024-06-12]]></title>
-            <link>https://monogameextended.net/blog/update-2024-06-12/</link>
-            <guid>https://monogameextended.net/blog/update-2024-06-12/</guid>
+            <link>https://www.monogameextended.net/blog/update-2024-06-12/</link>
+            <guid>https://www.monogameextended.net/blog/update-2024-06-12/</guid>
             <pubDate>Wed, 12 Jun 2024 00:00:00 GMT</pubDate>
             <description><![CDATA[Hi everyone,]]></description>
             <content:encoded><![CDATA[<p>Hi everyone,</p>
 <p>I wanted to take a moment and give a report on some of the progress made so far in getting version 4.0 officially released.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="current-status">Current Status<a class="hash-link" aria-label="Direct link to Current Status" title="Direct link to Current Status" href="https://monogameextended.net/blog/update-2024-06-12/#current-status">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="current-status">Current Status<a class="hash-link" aria-label="Direct link to Current Status" title="Direct link to Current Status" href="https://www.monogameextended.net/blog/update-2024-06-12/#current-status">​</a></h2>
 <p>If you take a look at the <a href="https://github.com/craftworkgames/MonoGame.Extended/milestone/8" target="_blank" rel="noopener noreferrer">v4.0.0 Milestone</a> page, you can see we are now at 55% completed</p>
-<p><img decoding="async" loading="lazy" alt="4.0.0 Milestone 55% Completed" src="https://monogameextended.net/assets/images/milestone-55-7f47251367acf0c27e1dff1848c3ae5d.png" width="897" height="383" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="4.0.0 Milestone 55% Completed" src="https://www.monogameextended.net/assets/images/milestone-55-7f47251367acf0c27e1dff1848c3ae5d.png" width="897" height="383" class="img_ev3q"></p>
 <p>If you'd like to checkout the list of issues that have been worked through so far, you can view them <a href="https://github.com/craftworkgames/MonoGame.Extended/issues?q=is%3Aissue%20is%3Aclosed%20project%3Acraftworkgames%2F6" target="_blank" rel="noopener noreferrer">here</a>.</p>
 <p>A lot of the remaining issues here could be closed with better documentation, which is going to come in the last leg of this sprint. However, with the current pace, the current deadline of end of June is looking good.  If you'd like to get involved in helping resolve the backlog of issues, please do. Be sure to checkout the <a href="https://github.com/craftworkgames/MonoGame.Extended/blob/develop/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">Contributing Guidelines</a> and fee free to contact me on discord with any questions.</p>
 <p>And with that status report out of the way, I wanted to touch on some other subjects</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="repository-changes">Repository Changes<a class="hash-link" aria-label="Direct link to Repository Changes" title="Direct link to Repository Changes" href="https://monogameextended.net/blog/update-2024-06-12/#repository-changes">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="repository-changes">Repository Changes<a class="hash-link" aria-label="Direct link to Repository Changes" title="Direct link to Repository Changes" href="https://www.monogameextended.net/blog/update-2024-06-12/#repository-changes">​</a></h2>
 <p><strong>MonoGame.Extended</strong> is an extension of <strong>MonoGame</strong>.  With this thought in mind, I have begun to restructure the project some, as many may have already noticed.  The reason behind this is that I feel things in Monogame.Extended should be placed in logical places that match types they are working with in MonoGame.  This keeps the source code structure similar to MonoGame which is beneficial for users working from source between both projects.</p>
 <p>What do I mean by this though?  Well, one example is the <code>RectangleExtensions</code>.  Previously it was placed in <code>MonoGame.Extended.Math</code>  However <code>Rectangle</code> in MonoGame exits in the root namespace, not in a <code>Math</code> namespace.  So <code>RectangleExtensions</code> will be moved to the project root to match the similar structure.  Some other changes, like <code>TextureRegion2D</code> is currently located in the <code>MonoGame.Extended.TextureAtlases</code> directory/namespace. At first, this seems like a logical fit, but a <code>TextureRegion2D</code> is a region of a <code>Texture2D</code>.  Atlases just use them, you don't have to have an atlas to use a <code>TextureRegion2D</code>.  So because they are more locally related to the <code>Texture2D</code> in MonoGame, they will be moved to a similar directory/namespace (<code>MonoGame.Extended.Graphic</code>).</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="in-conclusion">In Conclusion<a class="hash-link" aria-label="Direct link to In Conclusion" title="Direct link to In Conclusion" href="https://monogameextended.net/blog/update-2024-06-12/#in-conclusion">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="in-conclusion">In Conclusion<a class="hash-link" aria-label="Direct link to In Conclusion" title="Direct link to In Conclusion" href="https://www.monogameextended.net/blog/update-2024-06-12/#in-conclusion">​</a></h2>
 <p>I know no one like change, and changes like this may seem superfluous, but I do believe it will be a better user experience moving forward with 4.0.  However, I do value community feedback, so please give me your thoughts and feedback on this in the comment section at the end of this document.  We're halfway there to the 4.0.0 release.</p>]]></content:encoded>
             <category>Version 4.0</category>
         </item>
         <item>
             <title><![CDATA[MonoGame.Extended Is Back]]></title>
-            <link>https://monogameextended.net/blog/mongame-extended-is-back/</link>
-            <guid>https://monogameextended.net/blog/mongame-extended-is-back/</guid>
+            <link>https://www.monogameextended.net/blog/mongame-extended-is-back/</link>
+            <guid>https://www.monogameextended.net/blog/mongame-extended-is-back/</guid>
             <pubDate>Sun, 02 Jun 2024 00:00:00 GMT</pubDate>
             <description><![CDATA[It has been far too long since an official release was made of MonoGame.Extended.  Issues have piled up on GitHub, and everyone just wants to import Tiled maps.]]></description>
             <content:encoded><![CDATA[<p>It has been far too long since an official release was made of MonoGame.Extended.  Issues have piled up on GitHub, and everyone just wants to import Tiled maps.</p>
 <p>So let's change that!</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="hello-monogame-community">Hello MonoGame Community<a class="hash-link" aria-label="Direct link to Hello MonoGame Community" title="Direct link to Hello MonoGame Community" href="https://monogameextended.net/blog/mongame-extended-is-back/#hello-monogame-community">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="hello-monogame-community">Hello MonoGame Community<a class="hash-link" aria-label="Direct link to Hello MonoGame Community" title="Direct link to Hello MonoGame Community" href="https://www.monogameextended.net/blog/mongame-extended-is-back/#hello-monogame-community">​</a></h2>
 <p>Before moving further, I want to take a moment and introduce myself.  Who is this person saying that MonoGame.Extended is back.  Well, my name is Chris Whitley, also known as Aristurtle in the MonoGame Community.  I have been working with MonoGame for several years and maintain other open source libraries for MonoGame.  I am also a contributor to the main MonoGame repository as well.</p>
 <p>Outside of working with MonoGame and doing game development, I am a full stack dotnet web developer.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="change-of-responsibility">Change of Responsibility<a class="hash-link" aria-label="Direct link to Change of Responsibility" title="Direct link to Change of Responsibility" href="https://monogameextended.net/blog/mongame-extended-is-back/#change-of-responsibility">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="change-of-responsibility">Change of Responsibility<a class="hash-link" aria-label="Direct link to Change of Responsibility" title="Direct link to Change of Responsibility" href="https://www.monogameextended.net/blog/mongame-extended-is-back/#change-of-responsibility">​</a></h2>
 <p>The previous maintainer, Lucas Girouard-Stranks <a href="https://github.com/lithiumtoast" target="_blank" rel="noopener noreferrer">@lithiumtoast</a>, has stepped down due to lack of time and interest in maintaining MonoGame.Extended. Moving forward, I will be taking over the <a href="https://github.com/craftworkgames" target="_blank" rel="noopener noreferrer">craftworkgames</a> organization on GitHub.  This includes maintaining MonoGame.Extended.</p>
 <p>If you have any questions or concerns about this, please contact me on the <a href="https://discord.gg/FvZ8Z7EzPJ" target="_blank" rel="noopener noreferrer">MonoGame.Extended Discord Server</a></p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="roadmap">Roadmap<a class="hash-link" aria-label="Direct link to Roadmap" title="Direct link to Roadmap" href="https://monogameextended.net/blog/mongame-extended-is-back/#roadmap">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="roadmap">Roadmap<a class="hash-link" aria-label="Direct link to Roadmap" title="Direct link to Roadmap" href="https://www.monogameextended.net/blog/mongame-extended-is-back/#roadmap">​</a></h2>
 <p>Coming into MonoGame.Extended as a maintainer, the first priority is getting outstanding issues closed and a new release pushed.  This means my current attention will be focused solely on that goal for now.  New features that have been requested will be pushed back in favor of prioritizing outstanding issues.</p>
 <p>I currently have a goal of resolving outstanding issue by the end of June 2024. You can follow the progress of this on the <a href="https://github.com/craftworkgames/MonoGame.Extended/milestone/8" target="_blank" rel="noopener noreferrer">v4.0.0 Milestone</a> page.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="acknowledgements">Acknowledgements<a class="hash-link" aria-label="Direct link to Acknowledgements" title="Direct link to Acknowledgements" href="https://monogameextended.net/blog/mongame-extended-is-back/#acknowledgements">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="acknowledgements">Acknowledgements<a class="hash-link" aria-label="Direct link to Acknowledgements" title="Direct link to Acknowledgements" href="https://www.monogameextended.net/blog/mongame-extended-is-back/#acknowledgements">​</a></h2>
 <p>MonoGame.Extended would not exist were it not for the original maintainer Dylan Wilson <a href="https://github.com/dylanwilson80" target="_blank" rel="noopener noreferrer">@dylanwilson80</a>, Lucas Girouard-Stranks <a href="https://github.com/lithiumtoast" target="_blank" rel="noopener noreferrer">@lithiumtoast</a> taking over, and the work done by countless community members over time.  Thank you everyone for all that you have done for this project in the past, and I am honored to be the person leading this into the future.  I look forward to working with you all to continue shaping this into the best extension library for MonoGame.</p>]]></content:encoded>
         </item>
     </channel>
