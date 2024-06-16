@@ -14,4 +14,12 @@ bmfont:
   label: BitmapFonts
   permalink: /bitmap-fonts
   description: Updates on BitmapFont Support
+gum:
+  label: GUM UI
+  permalink: /gum
+  description: Posts related to the GUI UI integration into MonoGame.Extended
+ui:
+  label: UI
+  permalink: /ui
+  description: Posts related to UI in MonoGame.Extended.
 
