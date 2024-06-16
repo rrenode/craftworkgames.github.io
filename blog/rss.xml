@@ -4,10 +4,46 @@
         <title>MonoGame.Extended Blog</title>
         <link>https://monogameextended.net/blog/</link>
         <description>MonoGame.Extended Blog</description>
-        <lastBuildDate>Thu, 13 Jun 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 15 Jun 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[MonoGame.Extended Chews GUM]]></title>
+            <link>https://monogameextended.net/blog/monogame-extended-gum/</link>
+            <guid>https://monogameextended.net/blog/monogame-extended-gum/</guid>
+            <pubDate>Sat, 15 Jun 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[MonoGame.Extended Logo In GUM Tool]]></description>
+            <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" alt="MonoGame.Extended Logo In GUM Tool" src="https://monogameextended.net/assets/images/banner-f90f64060b95adf927ed25ee6a209420.png" width="2376" height="1570" class="img_ev3q"></p>
+<p>If you've been active in the MonoGame Discord or other community spaces lately, you might have heard of <a href="https://docs.flatredball.com/gum" target="_blank" rel="noopener noreferrer">GUM</a>. GUM is a game UI layout tool created by Victor Chelaru (<a href="https://github.com/vchelaru" target="_blank" rel="noopener noreferrer">@vchelaru</a>) and is used in the engine he maintains, <a href="https://flatredball.com/" target="_blank" rel="noopener noreferrer">FlatRedBall</a>. Recently, it was updated to work as a standalone tool that can be used in any MonoGame project.</p>
+<p>As I review the backlog of issues in MonoGame.Extended and prepare for the library's future, you can probably guess where this post is heading.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="monogameextendedgui">MonoGame.Extended.GUI<a class="hash-link" aria-label="Direct link to MonoGame.Extended.GUI" title="Direct link to MonoGame.Extended.GUI" href="https://monogameextended.net/blog/monogame-extended-gum/#monogameextendedgui">​</a></h2>
+<p>Initially, a port of Nuclex GUI was made as a GUI solution in MonoGame.Extended. Following that, Dylan, the original creator and maintainer of MonoGame.Extended, began work on the current MonoGame.Extended.Gui library.</p>
+<p><img decoding="async" loading="lazy" alt="Forum Post About Nuclex" src="https://monogameextended.net/assets/images/nuclex-gui-d5a107f0795450ff5c5dd5b957e1fc6b.png" width="1864" height="698" class="img_ev3q"></p>
+<p>Dylan's original statement that <strong>"It’s quite a big job creating a really solid GUI system."</strong> is very true. Not only is it a big job to create one, but it's also a significant effort to maintain it, fix bugs, and add new features.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="meet-gum">Meet GUM<a class="hash-link" aria-label="Direct link to Meet GUM" title="Direct link to Meet GUM" href="https://monogameextended.net/blog/monogame-extended-gum/#meet-gum">​</a></h2>
+<p>I've been keeping an eye on Vic's GUM Tool for a while now, and it's a solid tool. GUM consists of two parts: the GUM Layout Engine, which is the code framework, and the GUM Tool.</p>
+<p>The GUM Tool is a WYSIWYG Editor where you can visually create the UI elements for your game.</p>
+<p><img decoding="async" loading="lazy" alt="GUM Tool Editor" src="https://monogameextended.net/assets/images/gum-tool-example-092f22f27f063f13bf96221696fd5fe3.png" width="1532" height="948" class="img_ev3q"></p>
+<p>You can export your creations from the editor to a format that can be loaded into MonoGame and used. Alternatively, if you prefer not to use the editor, <strong>you don't have to</strong>. GUM also supports a code-first approach to creating layouts and UI.</p>
+<p>I highly recommend checking it out. Here's the <a href="https://docs.flatredball.com/gum/monogame/setup" target="_blank" rel="noopener noreferrer">MonoGame Setup</a> documentation page for it.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="what-does-this-mean">What Does This Mean?<a class="hash-link" aria-label="Direct link to What Does This Mean?" title="Direct link to What Does This Mean?" href="https://monogameextended.net/blog/monogame-extended-gum/#what-does-this-mean">​</a></h2>
+<p>As I look forward to the future of MonoGame.Extended, I need to determine how best to maintain and advance the library. To quote Dylan again, <strong>"It’s quite a big job creating a really solid GUI system."</strong> Vic has done this with GUM and done it well.</p>
+<p>After discussing with Vic earlier today, I will begin working with him to integrate GUM into MonoGame.Extended, replacing the current MonoGame.Extended.Gui portion. This means that GUM will become the standard supported UI choice in MonoGame.Extended in the future.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="what-about-monogameextendedgui">What About MonoGame.Extended.Gui?<a class="hash-link" aria-label="Direct link to What About MonoGame.Extended.Gui?" title="Direct link to What About MonoGame.Extended.Gui?" href="https://monogameextended.net/blog/monogame-extended-gum/#what-about-monogameextendedgui">​</a></h2>
+<p><em>Deleted, gone</em>....</p>
+<p>Just kidding. A lot of work has gone into MonoGame.Extended.Gui. From Dylan's initial efforts to the contributions from various contributors, I have great respect for the time and effort invested in it.</p>
+<p>It’s a significant part of MonoGame.Extended’s history, and I wouldn't just discard the work that's been done. Some may still wish to use and contribute to it in the future.</p>
+<p>Therefore, when the time comes, MonoGame.Extended.Gui will be moved out of the main MonoGame.Extended repository into its own separate project, where it can continue to exist and be used by those who prefer it.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="lets-wrap-this-up">Let's Wrap This Up<a class="hash-link" aria-label="Direct link to Let's Wrap This Up" title="Direct link to Let's Wrap This Up" href="https://monogameextended.net/blog/monogame-extended-gum/#lets-wrap-this-up">​</a></h2>
+<p>In conclusion, the focus of the UI portion of MonoGame.Extended will shift to using GUM UI. The existing MonoGame.Extended.Gui project will be moved to its own repository, where it can be maintained separately.</p>
+<p>If you have a moment, I encourage you to check out <a href="https://docs.flatredball.com/gum" target="_blank" rel="noopener noreferrer">GUM</a>. It truly is an amazing tool, and I look forward to its integration into the MonoGame.Extended ecosystem.</p>
+<p>If you have any questions or concerns, please let me know in the comments below or on Discord. Have a great weekend, everyone.</p>
+<p>- Aris</p>]]></content:encoded>
+            <category>Version 4.0</category>
+            <category>GUM UI</category>
+            <category>UI</category>
+        </item>
         <item>
             <title><![CDATA[BitmapFont Updates]]></title>
             <link>https://monogameextended.net/blog/bmfont-update/</link>
