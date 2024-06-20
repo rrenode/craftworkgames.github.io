@@ -102,8 +102,9 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} Craftwork Games.`,
       },
       prism: {
-        theme: prismThemes.github,
-        darkTheme: prismThemes.dracula,
+        theme: prismThemes.vsLight,
+        darkTheme: prismThemes.vsDark,
+        additionalLanguages: ['csharp']
       },
     }),
 };
