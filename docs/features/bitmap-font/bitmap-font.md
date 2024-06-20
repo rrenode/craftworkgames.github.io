@@ -88,7 +88,10 @@ BitmapFont bmfont = BitmapFont.FromFile("path/to/my-font.fnt");
 
 **From Stream Example**
 ```cs
-BitmapFont bmfont = BitmapFont.FromStream(TitleContainer.OpenStream("Content/my-font.fnt"));
+using(var stream = TitleContainer.OpenStream("Content/my-font.fnt"))
+{
+    BitmapFont bmfont = BitmapFont.FromStream(stream);
+}
 ```
 
 ### Loading Using The Content Pipeline.
