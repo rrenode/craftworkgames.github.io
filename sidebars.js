@@ -2,10 +2,12 @@ module.exports = {
   docs: {
     'MonoGame.Extended': ['about/introduction', 'about/principles', 'about/platforms'],
     'Getting Started': ['getting-started/installation'],
-    'Features':[
-        'features/texture2dregion/texture2dregion',
-        'features/texture2datlas/texture2datlas'
-      ],
+    'MonoGame.Extended.Graphics': [
+      'monogame.extended.graphics/monogame.extended.graphics',
+      'monogame.extended.graphics/texture2dregion/texture2dregion',
+      'monogame.extended.graphics/texture2datlas/texture2datlas',
+      'monogame.extended.graphics/sprite/sprite'
+    ],
     'Old Features': [
       'oldfeatures/tweening/tweening',
       'oldfeatures/tiled/tiled', 
