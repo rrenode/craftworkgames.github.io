@@ -3,76 +3,158 @@ id: installation-kni
 title: Installation (KNI)
 sidebar_label: Installation (KNI)
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-The following article details the steps necessary to get **MonoGame.Extended** installed and setup in your project.  **MonoGame.Extended** can be used with either [**MonoGame**](https://github.com/monogame/monogame), [**KNI**](https://github.com/kniEngine/kni), or [**FNA**](https://github.com/FNA-XNA/FNA).  This article wil detail how to setup and install **MonoGame.Extended** with an existing **MonoGame** project.
+The following article details the steps necessary to get **MonoGame.Extended** installed and setup in your **KNI** project.  **MonoGame.Extended** can be used with either [**MonoGame**](https://github.com/monogame/monogame), [**KNI**](https://github.com/kniEngine/kni), or [**KNI**](https://github.com/FNA-XNA/FNA).  This article wil detail how to setup and install **MonoGame.Extended** with an existing **KNI** project.
 
 :::note
-If you are using FNA, please see the [Installation (FNA)](./installation-fna.md) documents. If you are using KNI, please see the [Installation (KNI)](./installation-kni.md) document.
+- If you are using MonoGame, please see the [Installation (MonoGame)](./installation-monogame.mdx) document. 
+- If you are using FNA, please see the [Installation (FNA)](./installation-fna.md) document.
 :::
 
 ## Prerequisites
-The following prerequisites are required when using **MonoGame.Extended** with MonoGame.
+The following prerequisites are required when using **MonoGame.Extended** with **KNI**.
 
-- Ensure your development environment is setup for MonoGame Development.
-  - [Visual Studio 2022 Setup (Windows Only)](https://docs.monogame.net/articles/getting_started/1_setting_up_your_development_environment_windows.html)
-  - [Visual Studio Code Setup (Windows, Mac, and Linux)](https://docs.monogame.net/articles/getting_started/1_setting_up_your_development_environment_vscode.html?tabs=windows)
+- Download the latest release templates and install them so you can create a new **KNI** project
+  - [https://github.com/kniEngine/kni/releases](https://github.com/kniEngine/kni/releases)
 
-- A MonoGame project
-  - [Visual Studio 2022 (Windows Only)](https://docs.monogame.net/articles/getting_started/2_creating_a_new_project_vs.html)
-  - [Visual Studio Code (Windows, Mac, and Linux)](https://docs.monogame.net/articles/getting_started/2_creating_a_new_project_netcore.html)
+- An **KNI** project
+  - You create a **KNI** project in much the same way you do a **MonoGame** project, only you select the **KNI** templates instead of the **MonoGame** templates.
 
+## Installation
+**KNI.Extended** is distributed via a NuGet package.  You can add the NuGet pacakge to your **KNI** project through your IDE (Visual Studio, Rider, etc) or through the Command Line Interface (CLI) using the `dotnet` commands
 
-## NuGet packages
+<Tabs>
+  <TabItem value="net-cli" label=".NET Cli" default>
+    ```sh
+    dotnet add package KNI.Extended --version 3.9.0-prerelease.7
+    ```
+  </TabItem>
+  <TabItem value="package-manager" label="Package Manager">
+    ```sh
+    NuGet\Install-Package KNI.Extended -Version 3.9.0-prerelease.7
+    ```
+    <small>
+      This command is intended to be used within the Package Manager Console in Visual Studio, as it uses NuGet module's version of [Install-Package](https://docs.microsoft.com/nuget/reference/ps-reference/ps-ref-install-package)
+    </small>
+  </TabItem>
+  <TabItem value="package-reference" label="Package Reference" default>
+    ```xml
+    <PackageReference Include="KNI.Extended" Version="3.9.0-prerelease.7" />
+    ```
+    <small>
+        For projects that support [PackageReference](https://docs.microsoft.com/nuget/consume-packages/package-references-in-project-files), copy this XML node into the project file to reference the package. 
+    </small>
+  </TabItem>  
+</Tabs>
 
-`Extended` is distributed via NuGet packages. You can add the NuGet package to your C# project through your IDE of choice (Visual Studio, Xamarin Studio, Rider, etc) or through the Command Line Interface (CLI) using the `dotnet` command.
-
-```
-dotnet add package MonoGame.Extended
-```
-
-## Referencing the Content Pipeline
-
-:::note
-The `MonoGame` Content Pipeline is being phased out with `Extended`; in the future, you won't need to deal with the Content Pipeline. For more information see [this GitHub issue](https://github.com/craftworkgames/MonoGame.Extended/issues/676).
+:::caution
+**KNI.Extended** is currently being updated and prepped for version 4.0 release.  In the mean time, the current stable version is the **3.9.0-prerelease.7** version shown above.   Please use this version for now even though it is marked prerelease until version 4.0 is released.  For more information, please see the [MonoGame.Extended is Back](/blog/mongame-extended-is-back) blog post.
 :::
 
-To use some features of `Extended`  you'll need to install the Content Pipeline Nuget package.
+## (Optional) Setup MGCB Editor
+**KNI.Extended** provides MonoGame Content Pipeline Extensions to extend the asset types that can be imported through the MonoGame Content Pipeline.  All asset preprocessing extensions provided as pipeline extensions can be used to load the assets at runtime from disk if you want, meaning that setting this up is optional and only needed if you are using the content pipeline for asset management in your game. 
+
+### Download Pipeline Nuget
+To get started first add the `KNI.Extended.Content.Pipeline` NuGet package to your MonoGame project
+
+<Tabs>
+  <TabItem value="net-cli" label=".NET Cli" default>
+    ```sh
+    dotnet add package KNI.Extended.Content.Pipeline --version 3.9.0-prerelease.7
+    ```
+  </TabItem>
+  <TabItem value="package-manager" label="Package Manager">
+    ```sh
+    NuGet\Install-Package KNI.Extended.Content.Pipeline -Version 3.9.0-prerelease.7
+    ```
+    <small>
+      This command is intended to be used within the Package Manager Console in Visual Studio, as it uses NuGet module's version of [Install-Package](https://docs.microsoft.com/nuget/reference/ps-reference/ps-ref-install-package)
+    </small>
+  </TabItem>
+  <TabItem value="package-reference" label="Package Reference" default>
+    ```xml
+    <PackageReference Include="KNI.Extended.Content.Pipeline" Version="3.9.0-prerelease.7" />
+    ```
+    <small>
+        For projects that support [PackageReference](https://docs.microsoft.com/nuget/consume-packages/package-references-in-project-files), copy this XML node into the project file to reference the package. 
+    </small>
+  </TabItem>  
+</Tabs>
+
+### Add Reference to MGCB Editor
+In order for the MonoGame Content Builder (MGCB) Editor to make use of the extension provided by **KNI.Extended.Content.Pipeline** you will need to add a reference to the `KNI.Extended.Content.Pipeline.dll` assembly to the content project.  This assembly is downloaded as part of the **KNI.Extended.Content.Pipeline** NuGet you just install, however the necessary files to reference do not get automatically copied to your project directory.  To add the reference, complete the following steps:
+
+1. Open you **Content.mgcb** file in the **MGCB Editor**
+
+:::tip
+When using Visual Studio, double clicking the **Content.mgcb** file in your project should open it for you using the **MGCB Editor** automatically if you have the MonoGame Visual Studio Extension installed.  If, for some reason, it opens it as a plain text file instead, you can right-click the **Content.mgcb** file, choose **Open With**, then set the default default application to open with as the **MGCB Editor**.  
+
+Alternatively, if you're not using Visual Studio, you can open it by using the following `dotnet` command in a command-line or terminal window from within your project directory
+
+```sh
+dotnet mgcb-editor ./Content/Content.mgcb
+```
+:::
+
+2. Click the **Content** node located in the **Project** panel on the left.
+3. In the **Properties** panel below it, scroll down to the **References** field.  Click this field to open the **Reference Editor** dialog window.
+4. Click the **Add** button in the **Reference Editor** dialog window.
+5. Find and add the **KNI.Extended.Content.Pipeline.dll** that was downloaded from the NuGet package
+
+:::tip
+By default, NuGet will download packages to the global packages directory.  The following shows where the location of the **KNI.Extended.Content.Pipeline.dll** will be with the default NuGet configs depending on your operating system.
+
+<Tabs>
+  <TabItem value="window" label="Windows" default>
+    ```
+    %USERPROFILE%\.nuget\packages\kni.extended.content.pipeline\3.9.0-prerelease.7\tools\KNI.Extended.Content.Pipeline.dll
+    ```
+  </TabItem>
+  <TabItem value="mac" label="macOS">
+    ```sh
+    ~/.nuget/packages/kni.extended.content.pipeline/3.9.0-prerelease.7/tools/KNI.Extended.Content.Pipeline.dll
+    ```
+  </TabItem>
+  <TabItem value="linux" label="Linux" default>
+    ```sh
+    ~/.nuget/packages/kni.extended.content.pipeline/3.9.0-prerelease.7/tools/KNI.Extended.Content.Pipeline.dll
+    ```
+  </TabItem>  
+</Tabs>
+
+:::
+
+6. Click **Ok** to close the **Reference Editor** dialog window.
+
+You should now see the **KNI.Extended.Content.Pipeline.dll** in the **References** field of the **Property** panel.  
 
 ```
 dotnet add package MonoGame.Extended.Content.Pipeline
 ```
 
-This package is not included as part of the base `Extended` package and must be installed separately. It won't add any build artifacts to your project; instead it will install the dependencies that are intended to be referenced from the [MonoGame Content Pipeline tool](http://www.monogame.net/documentation/?page=Pipeline).
-
-You'll need to manually add the reference to your content file (usually `Content.mgcb`) using one of the following methods.
-
-### Using the MonoGame Pipeline GUI
-
-To add the reference using the Pipeline GUI tool follow these steps:
-
- 1. Click on the **Content** node in the root of the tree.
- 2. In the properties window, modify the **References** property.
- 3. Find and add the `MonoGame.Extended.Content.Pipeline.dll`. It's usually located in the **packages** folder of your solution.  The default location of the **packages** folder in .NET Core is  `C:\Users\[User]\.nuget\packages`.
-
-### Using a text editor
-
-An alternative way to add the reference is by manually editing the `Content.mgcb` file in a text editor or Visual Studio. Look for the references section and update it like this:
+:::caution
+The reference we just added to the MGCB Editor is stored as a relative path in the **Content.mgcb** file.  You can see this for yourself by opening the **Content.mgcb** file in a text editor and locating the references section.  It will look something like this
 
 ```
 #-------------------------------- References --------------------------------#
 
-/reference:..\..\packages\MonoGame.Extended.Content.Pipeline.0.6.372\tools\MonoGame.Extended.Content.Pipeline.dll
+/reference:..\..\..\..\..\..\.nuget\packages\kni.extended.content.pipeline\3.9.0-prerelease.7\tools\KNI.Extended.Content.Pipeline.dll
 ```
 
-:::tip Remember
-The `MonoGame.Extended.dll` and the `MonoGame.Extended.Content.Pipeline.dll` come as a pair. Always make sure the version referenced by your game matches the version referenced by the Pipeline tool.
+Since it is stored as a relative path, this reference can break if
+
+- You move the project directory somewhere else on your computer.
+- You use multiple workstations for development
+- You have multiple team members working on the project from a shared git repo.
+
+This is a limitation with the MGCB Editor, not with **KNI.Extended**, because it stores it as a relative path.  Due to this, i strongly recommend setting up a **nuget.config** file for you project.  By doing this, you can specify that the NuGet packages should be downloaded to a local directory within the project itself.  Then the relative path will not break since it's local to the project.
+
+For more information on creating a **nuget.config** file to do this, see the [nuget.config File Reference](https://learn.microsoft.com/en-us/nuget/reference/nuget-config-file) on Microsoft Learn.
+
 :::
 
+
 ## Conclusion
-
-That's it! Once you've setup `Extended` you can start using it to make your games even more awesome.
-
-
-
-
-
+Setting up **KNI.Extended** with an existing **KNI** project is straight forward and only requires that you add the NuGet reference.  Once added, you can immediately start taking advantage of what **KNI.Extended** has to offer.
