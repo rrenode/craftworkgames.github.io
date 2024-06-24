@@ -92,7 +92,7 @@ BitmapFont bmfont = BitmapFont.FromStream(TitleContainer.OpenStream("Content/my-
 ```
 
 ### Loading Using The Content Pipeline.
-To load the `.fnt` files using the Content Pipeline, you first need to add the `MonoGame.Extended.Content.Pipeline.dll` reference to the **MGCB Editor**. If you have not done this yet, please reference the [Installation](../../getting-started/installation.md) article.
+To load the `.fnt` files using the Content Pipeline, you first need to add the `MonoGame.Extended.Content.Pipeline.dll` reference to the **MGCB Editor**. If you have not done this yet, please reference the [Installation](../../getting-started/installation-monogame.mdx) article.
 
 Once the reference is added, you can add the `.fnt` file and its associated textures to the **MGCB Editor**. If you are using directories inside the MGCB Editor to organize content, ensure that the textures for the .fnt file are placed in the same directory as the .fnt file.
 
