@@ -12,7 +12,7 @@ The `MonoGame.Extended.Tiled` library allows you to load and render maps files (
 
 ### Content Pipeline
 
-To load a Tiled map you first to compile it using the Content Pipeline. If you have not setup the Content Pipeline with `MonoGame.Extended` yet see the instructions on how to install the Content Pipeline in the [getting started section](/docs/getting-started/installation).
+To load a Tiled map you first to compile it using the Content Pipeline. If you have not setup the Content Pipeline with `MonoGame.Extended` yet see the instructions on how to install the Content Pipeline in the [getting started section](/docs/getting-started/installation-monogame).
 
 ### NuGet 
 
