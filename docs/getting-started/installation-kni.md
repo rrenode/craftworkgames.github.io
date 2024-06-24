@@ -1,16 +1,26 @@
 ---
-id: installation
-title: Installation
-sidebar_label: Installation
+id: installation-kni
+title: Installation (KNI)
+sidebar_label: Installation (KNI)
 ---
 
-These are instructions on to get `Extended` installed and setup with `MonoGame`.
+The following article details the steps necessary to get **MonoGame.Extended** installed and setup in your project.  **MonoGame.Extended** can be used with either [**MonoGame**](https://github.com/monogame/monogame), [**KNI**](https://github.com/kniEngine/kni), or [**FNA**](https://github.com/FNA-XNA/FNA).  This article wil detail how to setup and install **MonoGame.Extended** with an existing **MonoGame** project.
+
+:::note
+If you are using FNA, please see the [Installation (FNA)](./installation-fna.md) documents. If you are using KNI, please see the [Installation (KNI)](./installation-kni.md) document.
+:::
 
 ## Prerequisites
+The following prerequisites are required when using **MonoGame.Extended** with MonoGame.
 
-- [.NET Core 3.1 SDK](https://dotnet.microsoft.com/download/dotnet-core/3.1)
-- [DirectX June 2010 runtime](https://www.microsoft.com/en-us/download/details.aspx?id=8109) (Only if working with DirectX on Windows)
-- [A `MonoGame` project](https://docs.monogame.net/articles/introduction/create_project.html)
+- Ensure your development environment is setup for MonoGame Development.
+  - [Visual Studio 2022 Setup (Windows Only)](https://docs.monogame.net/articles/getting_started/1_setting_up_your_development_environment_windows.html)
+  - [Visual Studio Code Setup (Windows, Mac, and Linux)](https://docs.monogame.net/articles/getting_started/1_setting_up_your_development_environment_vscode.html?tabs=windows)
+
+- A MonoGame project
+  - [Visual Studio 2022 (Windows Only)](https://docs.monogame.net/articles/getting_started/2_creating_a_new_project_vs.html)
+  - [Visual Studio Code (Windows, Mac, and Linux)](https://docs.monogame.net/articles/getting_started/2_creating_a_new_project_netcore.html)
+
 
 ## NuGet packages
 

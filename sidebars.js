@@ -1,7 +1,11 @@
 module.exports = {
   docs: {
     'MonoGame.Extended': ['about/introduction', 'about/principles', 'about/platforms'],
-    'Getting Started': ['getting-started/installation'],
+    'Getting Started': [
+      'getting-started/installation-monogame',
+      'getting-started/installation-kni',
+      'getting-started/installation-fna'
+    ],
     'Features': [
       'features/tweening/tweening',
       'features/tiled/tiled', 
