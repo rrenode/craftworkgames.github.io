@@ -4,10 +4,20 @@
         <title>MonoGame.Extended Blog</title>
         <link>https://www.monogameextended.net/blog/</link>
         <description>MonoGame.Extended Blog</description>
-        <lastBuildDate>Sat, 15 Jun 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 23 Jun 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[FNA and KNI Support]]></title>
+            <link>https://www.monogameextended.net/blog/kni-fna/</link>
+            <guid>https://www.monogameextended.net/blog/kni-fna/</guid>
+            <pubDate>Sun, 23 Jun 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[MonoGame.Extended adds support for FNA and KNI]]></description>
+            <content:encoded><![CDATA[<p>- Aris</p>]]></content:encoded>
+            <category>kni</category>
+            <category>fna</category>
+        </item>
         <item>
             <title><![CDATA[MonoGame.Extended Chews GUM]]></title>
             <link>https://www.monogameextended.net/blog/monogame-extended-gum/</link>
