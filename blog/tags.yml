@@ -22,4 +22,11 @@ ui:
   label: UI
   permalink: /ui
   description: Posts related to UI in MonoGame.Extended.
-
+kni:
+  label: KNI
+  permalink: /kni
+  description: Posts related to MonoGame.Extended and KNI
+fna:
+  label: FNA
+  permalink: /fna
+  description: Posts related to MonoGame.Extended and FNA
