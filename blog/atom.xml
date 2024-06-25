@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://www.monogameextended.net/blog/</id>
     <title>MonoGame.Extended Blog</title>
-    <updated>2024-06-23T00:00:00.000Z</updated>
+    <updated>2024-06-24T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://www.monogameextended.net/blog/"/>
     <subtitle>MonoGame.Extended Blog</subtitle>
@@ -11,15 +11,21 @@
         <title type="html"><![CDATA[FNA and KNI Support]]></title>
         <id>https://www.monogameextended.net/blog/kni-fna/</id>
         <link href="https://www.monogameextended.net/blog/kni-fna/"/>
-        <updated>2024-06-23T00:00:00.000Z</updated>
+        <updated>2024-06-24T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[MonoGame.Extended adds support for FNA and KNI]]></summary>
-        <content type="html"><![CDATA[<p>- Aris</p>]]></content>
+        <content type="html"><![CDATA[<p><strong>MonoGame.Extended</strong> now has support for both <a href="https://github.com/FNA-XNA/FNA" target="_blank" rel="noopener noreferrer">FNA</a> and <a href="https://github.com/kniEngine/kni" target="_blank" rel="noopener noreferrer">KNI</a>.  This is possible due to the work put in by <a href="https://github.com/nkast" target="_blank" rel="noopener noreferrer">nKast</a>, so huge shoutout to him for the contribution to the library.</p>
+<p>If you'd like to get started using MonoGame.Extended in either FNA or KNI, check out the appropriate installation document below</p>
+<ul>
+<li><a href="https://www.monogameextended.net/docs/getting-started/installation-fna/">FNA Installation</a></li>
+<li><a href="https://www.monogameextended.net/docs/getting-started/installation-kni/">KNI Installation</a></li>
+</ul>
+<p>- Aris</p>]]></content>
         <author>
             <name>Christopher Whitley (AristurtleDev)</name>
             <uri>https://github.com/aristurtledev</uri>
         </author>
-        <category label="kni" term="kni"/>
-        <category label="fna" term="fna"/>
+        <category label="KNI" term="KNI"/>
+        <category label="FNA" term="FNA"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[MonoGame.Extended Chews GUM]]></title>
