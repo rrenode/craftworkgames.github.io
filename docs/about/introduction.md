@@ -49,6 +49,6 @@ If you have any questions related to **MonoGame.Extended**, you are welcome to j
 The maintainers are also active in the main [MonoGame Discord](https://discord.gg/monogame).
 
 ## Something Missing?
-If you discover any issues with the documentation or have suggestions for improvement, please create an issue in the [documentation GitHub repository](https://github.com/craftworkgames/craftworkgames.github.io) or join the [MonoGame.Extended Discord](https://discord.gg/FvZ8Z7EzPJ) and leave a message. Contributions to the documentation are encouraged and welcome; please read the [Contributing](/docs/getting-started/contributing) document first.
+If you discover any issues with the documentation or have suggestions for improvement, please create an issue in the [documentation GitHub repository](https://github.com/craftworkgames/craftworkgames.github.io) or join the [MonoGame.Extended Discord](https://discord.gg/FvZ8Z7EzPJ) and leave a message. Contributions to the documentation are encouraged and welcome; please read the [Contributing](/docs/about/contributing) document first.
 
 For issues or feature requests in the **MonoGame.Extended** library itself, please open new requests on the [MonoGame.Extended GitHub](https://github.com/craftworkgames/MonoGame.Extended).
