@@ -20,7 +20,7 @@ This change is significant because it means that you can use any tool that can e
 
 Another benefit of this is that Hiero supports exporting the fonts as Signed Distance Field, which means I can start implementing SDF Font Rendering support.
 
-The [BitmapFont Feature](../../../docs/features/bitmap-font/) article has also been updated to better explain how to use the feature. 
+The [BitmapFont Feature](../../../docs/features/fonts/bitmapfont/) article has also been updated to better explain how to use the feature. 
 
 That's all for now, hope everyone is having a great week.
 

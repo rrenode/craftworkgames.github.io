@@ -5,6 +5,8 @@ title: Sprite
 description: A drawable region of a Texture2D with additional properties for rendering such as  scale, rotation, and color
 ---
 import PlayingCards from './cards.png'
+import AceOfSpadesResult from './ace_of_spades_only.png'
+import  FinalResultScreenshot from './final_result.png'
 
 ## Overview
 
@@ -22,41 +24,38 @@ Let's take the cards image from the previous two examples and use them to create
     </figcaption>
 </figure>
 
-We'll start with the usual of loading the `Texture2D` and using that to create a `Texture2DAtlas` with a region that represents the Ace of Hearts card
+We'll start with the usual of loading the `Texture2D` and using that to create a `Texture2DAtlas`
 
 ```cs
 // highlight-next-line
 private Texture2DAtlas _atlas;
 // highlight-next-line
-private Sprite _aceOfHearts;
+private Sprite _aceOfClubsSprite;
 
 protected override void LoadContent()
 {
     // highlight-next-line
     Texture2D cardsTexture = Content.Load<Texture2D>("cards");
-
-    //  Create the atlas and add a region to it.
     // highlight-next-line
-    _atlas = new Texture2DAtlas(cardsTexture);
-    // highlight-next-line
-    _atlas.CreateRegion(11, 68, 42, 60);
+    _atlas = Texture2DAtlas.Create("Atlas/Cards", cardsTexture, 32, 32);
 }
 ```
 
-Now that we have the atlas created and the region representing our Ace of Hearts card added to it, we can tell the atlas to create a sprite instance for us based on this region
+Now that we have the atlas created with the regions generated, we can use the `Texture2DAtlas.CreateSprite()` method to create a `Sprite` from one of the regions.
 
 ```cs
+private Texture2DAtlas _atlas;
+private Sprite _aceOfClubsSprite;
+
 protected override void LoadContent()
 {
     Texture2D cardsTexture = Content.Load<Texture2D>("cards");
 
-    //  Create the atlas and add a region to it.
     _atlas = new Texture2DAtlas(cardsTexture);
     _atlas.CreateRegion(11, 68, 42, 60);
 
-    //  Create a sprite from the atlas
     // highlight-next-line
-    _aceOfHearts = _atlas.CreateSprite()
+    _aceOfClubsSprite = _atlas.CreateSprite(regionIndex: 12);
 }
 ```
 
@@ -70,7 +69,7 @@ protected override void Draw(GameTime gameTime)
     // highlight-next-line
     _spriteBatch.Begin();
     // highlight-next-line
-    _spriteBatch.Draw(_aceOfHearts, new Vector2(316, 270));
+    _spriteBatch.Draw(_aceOfClubsSprite, new Vector2(384, 284));
     // highlight-next-line
     _spriteBatch.End();
 
@@ -80,8 +79,14 @@ protected override void Draw(GameTime gameTime)
 
 Which gives us the following result
 
-<figure>![Rendering of the Ace of Hearts card as a Sprite](./ace_of_hearts_only.png)<br/><figcaption><small>The result of rendering the `_aceOfHearts` sprite from the example above.</small></figcaption></figure>
-
+<figure>
+    <img src={AceOfSpadesResult} style={{width: '100%', imageRendering: 'pixelated'}} alt="Rendering of the Ace of Clubs card as a Sprite instance."/>
+    <figcaption>
+        <small>
+            The result of rendering the `_aceOfClubsSprite` sprite from the example above
+        </small>
+    </figcaption>
+</figure>
 
 
 Doing it like this though is not much different than just using a `Texture2DRegion` unless we make use of the `Sprite` properties.
@@ -100,70 +105,56 @@ The `Sprite` class has the following properties that can be set
 As an example, let's create `Sprite`s for the other Ace cards and adjust some of their properties to show the affect.  Adjust your code to the following
 
 ```cs
-// highlight-next-line
 private Texture2DAtlas _atlas;
+private Sprite _aceOfClubsSprite
 // highlight-next-line
-private Sprite _aceOfHearts;
+private Sprite _aceOfDiamondsSprite;
 // highlight-next-line
-private Sprite _aceOfDiamonds;
+private Sprite _aceOfHeartsSprite;
 // highlight-next-line
-private Sprite _aceOfClubs;
-// highlight-next-line
-private Sprite _aceOfSpades;
+private Sprite _aceOfSpadesSprite;
 
 protected override void LoadContent()
 {
-    _spriteBatch = new SpriteBatch(GraphicsDevice);
-
     Texture2D cardsTexture = Content.Load<Texture2D>("cards");
 
-    //  Create the atlas and add regions to it for each ace card
     _atlas = new Texture2DAtlas(cardsTexture);
-    // highlight-next-line
-    _atlas.CreateRegion(11, 68, 42, 60, "Ace of Hearts");
-    // highlight-next-line
-    _atlas.CreateRegion(11, 68, 42, 60, "Ace of Diamonds");
-    // highlight-next-line
-    _atlas.CreateRegion(11, 133, 42, 60, "Ace of Clubs");
-    // highlight-next-line
-    _atlas.CreateRegion(11, 198, 42, 60, "Ace of Spades");
+    _atlas.CreateRegion(11, 68, 42, 60);
 
-
-    //  Create a sprite from the atlas
+    _aceOfClubsSprite = _atlas.CreateSprite(regionIndex: 12);
     // highlight-next-line
-    _aceOfHearts = _atlas.CreateSprite("Ace of Hearts");
+    _aceOfDiamondsSprite = _atlas.CreateSprite(regionIndex: 25);
     // highlight-next-line
-    _aceOfDiamonds = _atlas.CreateSprite("Ace of Diamonds");
+    _aceOfHeartsSprite = _atlas.CreateSprite(regionIndex: 38);
     // highlight-next-line
-    _aceOfClubs = _atlas.CreateSprite("Ace of Clubs");
-    // highlight-next-line
-    _aceOfSpades = _atlas.CreateSprite("Ace of Spades");
+    _aceOfSpadesSprite = _atlas.CreateSprite(regionIndex: 51);
 
     //  Change the color mask of the heart and diamond to red
     // highlight-next-line
-    _aceOfHearts.Color = Color.Red;
+    _aceOfHeartsSprite.Color = Color.Red;
     // highlight-next-line
-    _aceOfDiamonds.Color = Color.Red;
+    _aceOfDiamondsSprite.Color = Color.Red;
 
     //  Change the Alpha transparency of the club and spade to half
     // highlight-next-line
-    _aceOfClubs.Alpha = 0.5f;
+    _aceOfClubsSprite.Alpha = 0.5f;
     // highlight-next-line
-    _aceOfSpades.Alpha = 0.5f;
+    _aceOfSpadesSprite.Alpha = 0.5f;
 }
 
 protected override void Draw(GameTime gameTime)
 {
     GraphicsDevice.Clear(Color.CornflowerBlue);
 
-    _spriteBatch.Begin();
-    _spriteBatch.Draw(_aceOfHearts, new Vector2(316, 270));
+    _spriteBatch.Begin(samplerState: SamplerState.PointClamp);
     // highlight-next-line
-    _spriteBatch.Draw(_aceOfDiamonds, new Vector2(358, 270));
+    _spriteBatch.Draw(_aceOfClubsSprite, new Vector2(336, 284));
     // highlight-next-line
-    _spriteBatch.Draw(_aceOfClubs, new Vector2(400, 270));
+    _spriteBatch.Draw(_aceOfDiamondsSprite, new Vector2(368, 284));
     // highlight-next-line
-    _spriteBatch.Draw(_aceOfSpades, new Vector2(442, 270));
+    _spriteBatch.Draw(_aceOfHeartsSprite, new Vector2(400, 284));
+    // highlight-next-line
+    _spriteBatch.Draw(_aceOfSpadesSprite, new Vector2(432, 284));
     _spriteBatch.End();
 
     base.Draw(gameTime);
@@ -172,7 +163,14 @@ protected override void Draw(GameTime gameTime)
 
 When you run the example now, you can see that the Red color mask is automatically applied for Ace of Hearts and Diamonds, and the alpha transparency is automatically applied for the Ace of Clubs and Spades.
 
-<figure>![Rendering of the Ace cards as Sprites with adjusted properties](./final_result.png)<br/><figcaption><small>The result of rendering the ace cards as `Sprite` classes with adjusted properties from the example above.</small></figcaption></figure>
+<figure>
+    <img src={FinalResultScreenshot} style={{width: '100%', imageRendering: 'pixelated'}} alt="The result of rendering the ace cards as `Sprite` classes with adjusted properties from the example above."/>
+    <figcaption>
+        <small>
+            The result of rendering the ace cards as `Sprite` classes with adjusted properties from the example above.
+        </small>
+    </figcaption>
+</figure>
 
 ## Conclusion
 By creating `Sprite`s from the regions created in a `Texture2DAtlas`, we have a concrete implementation of the image we want to render.  This implementation features properties we can adjust that automatically get applied when its rendered.  

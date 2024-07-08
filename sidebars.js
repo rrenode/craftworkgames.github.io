@@ -102,13 +102,25 @@ const _2dAnimationsCategory = {
   ]
 };
 
+const fontsCategory = {
+  type: 'category',
+  label: 'Fonts',
+  items: [
+    {
+      type: 'doc',
+      id: 'features/fonts/bitmapfont/bitmapfont'
+    }
+  ]
+}
+
 
 const features = {
   type: 'category',
   label: 'Features',
   items: [
     textureHandlingCategory,
-    _2dAnimationsCategory
+    _2dAnimationsCategory,
+    fontsCategory
   ]
 };
 

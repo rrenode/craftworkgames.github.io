@@ -7,6 +7,7 @@ image: ./result.png
 ---
 
 import PlayingCards from './cards.png'
+import ResultScreenShot from './result.png'
 
 A `Texture2DRegion` is a subregion of a texture, typically used for rendering sprites from a texture atlas or sprite sheet.  For instance, take the following image of playing cards.
 
@@ -19,7 +20,7 @@ A `Texture2DRegion` is a subregion of a texture, typically used for rendering sp
     </figcaption>
 </figure>
 
-In MonoGame, this would be loaded as a single `Texture2D` image, however we would want to define the individual boundaries within the image that represent each individual card. For instance, the top-left corner of the Ace of Hearts is at x:11 y:3 and has a width of 42px and a height of 60px.  So we can define the rectangular boundary of this card in the overall texture as `new Rectangle(11, 3, 42, 60)`
+In MonoGame, this would be loaded as a single `Texture2D` image, however we would want to define the individual boundaries within the image that represent each individual card. For instance, the Ace of Hearts is at x:384 y:64 and has a width of 32px and a height of 32px.  So we can define the rectangular boundary of this card in the overall texture as `new Rectangle(384, 64, 32, 32)`
 
 This is what a `Texture2DRegion` represents.  Internally it has a reference to the source `Texture2D` and defines the rectangular boundary that represents the sub region within the texture.
 
@@ -41,14 +42,10 @@ protected override void LoadContent()
 {
     Texture2D cardsTexture = Content.Load<Texture2D>("cards");
 
-    //---------------------------------------------------------------------------------------------------------
-    // Create a region for each ace card based on the rectangular boundary of the card within the source
-    // texture.
-    //---------------------------------------------------------------------------------------------------------
-    _aceOfHearts = new Texture2DRegion(cardsTexture, 11, 3, 42, 60);
-    _aceOfDiamonds = new Texture2DRegion(cardsTexture, 11, 68, 42, 60);
-    _aceOfClubs = new Texture2DRegion(cardsTexture, 11, 133, 42, 60);
-    _aceOfSpades = new Texture2DRegion(cardsTexture, 11, 198, 42, 60);
+    _aceOfHearts = new Texture2DRegion(cardsTexture, 384, 64, 32, 32);
+    _aceOfDiamonds = new Texture2DRegion(cardsTexture, 384, 32, 32, 32);
+    _aceOfClubs = new Texture2DRegion(cardsTexture, 384, 0, 32, 32);
+    _aceOfSpades = new Texture2DRegion(cardsTexture, 384, 96, 32, 32);
 }
 ```
 
@@ -57,18 +54,14 @@ Then we can use the `SpriteBatch.Draw` extensions provided by MonoGame.Extended 
 ```cs
 protected override void Draw(GameTime gameTime)
 {
-    GraphicsDevice.Clear(Color.CornflourBlue);
+    GraphicsDevice.Clear(Color.CornflowerBlue);
 
     _spriteBatch.Begin(samplerState: SamplerState.PointClamp);
 
-    //---------------------------------------------------------------------------------------------------------
-    //  Draw the texture regions just like you would a normal Texture2D.  Since they are all using the same
-    //  source texture, there is no texture swapping for each draw call.
-    //---------------------------------------------------------------------------------------------------------
-    _spriteBatch.Draw(_aceOfHearts, new Vector2(316, 270), Color.White);
-    _spriteBatch.Draw(_aceOfDiamonds, new Vector2(358, 270), Color.White);
-    _spriteBatch.Draw(_aceOfClubs, new Vector2(400, 270), Color.White);
-    _spriteBatch.Draw(_aceOfSpades, new Vector2(442, 270), Color.White);
+    _spriteBatch.Draw(_aceOfHearts, new Vector2(336, 284), Color.White);
+    _spriteBatch.Draw(_aceOfDiamonds, new Vector2(368, 284), Color.White);
+    _spriteBatch.Draw(_aceOfClubs, new Vector2(400, 284), Color.White);
+    _spriteBatch.Draw(_aceOfSpades, new Vector2(432, 284), Color.White);
 
     _spriteBatch.End();
 }
@@ -76,7 +69,12 @@ protected override void Draw(GameTime gameTime)
 
 Which gives the following result
 
-<figure>![Result of the code](./result.png)<br/><figcaption><small>Result of the code above drawing all four ace cards using texture regions.</small></figcaption></figure>
+<figure>
+    <img src={ResultScreenShot} style={{width: '100%', imageRendering: 'pixelated'}} alt="Result of the code"/>
+    <figcaption>
+        <small>Result of the code above drawing all four ace cards using texture regions</small>
+    </figcaption>
+</figure>
 
 ## Conclusion
 In this article, we've discussed what a `Texture2DRegion` is in relation to a `Texture2D`, discussed the performance benefits of using them, and shown an example of creating them. In the next article we'll discuss using a `Texture2DAtlas` to manage a collection of regions for a single texture.
