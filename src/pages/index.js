@@ -23,6 +23,9 @@ function HomepageHeader() {
             Get Started
           </Link>
         </div>
+        <p>
+          Documentation is currently being updated, so there may be missing information at the moment.
+        </p>
       </div>
     </header>
   );
