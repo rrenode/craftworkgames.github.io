@@ -79,7 +79,7 @@
 <p>With <a href="https://github.com/craftworkgames/MonoGame.Extended/pull/887" target="_blank" rel="noopener noreferrer">PR #887</a> all three export formats are now supported both when loading the file directly at runtime or if you want to use the Content Pipeline to preprocess the file.</p>
 <p>This change is significant because it means that you can use any tool that can export a <code>.fnt</code> file in the AngleCode Bitmap Font file format, such as <a href="https://libgdx.com/wiki/tools/hiero" target="_blank" rel="noopener noreferrer">libGDX Hiero</a> which can be used cross platform.  Previously only the AngleCode BMFont application could be used, which was Windows only, unless you setup WINE on macOS or Linux to run it.</p>
 <p>Another benefit of this is that Hiero supports exporting the fonts as Signed Distance Field, which means I can start implementing SDF Font Rendering support.</p>
-<p>The <a href="https://www.monogameextended.net/docs/features/bitmap-font/">BitmapFont Feature</a> article has also been updated to better explain how to use the feature.</p>
+<p>The <a href="https://www.monogameextended.net/docs/features/fonts/bitmapfont/">BitmapFont Feature</a> article has also been updated to better explain how to use the feature.</p>
 <p>That's all for now, hope everyone is having a great week.</p>
 <p>- Aris</p>]]></content>
         <author>
