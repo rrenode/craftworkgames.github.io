@@ -1,6 +1,10 @@
 module.exports = {
   docs: {
-    'MonoGame.Extended': ['about/introduction', 'about/principles', 'about/platforms'],
+    'MonoGame.Extended': [
+      'about/introduction',
+       'about/principles', 
+       'about/contributing'
+      ],
     'Getting Started': [
       'getting-started/installation-monogame',
       'getting-started/installation-kni',
