@@ -4,7 +4,7 @@ title: Principles
 sidebar_label: Principles
 ---
 
-`Extended` principles are to help you manifest an early [prototype](/docs/getting-started/prototypes) for your ideas of a game and evolve it into a working game without throwing away the prototype.
+`Extended` principles are to help you manifest an early prototype for your ideas of a game and evolve it into a working game without throwing away the prototype.
   
 ## Not opinionative
 

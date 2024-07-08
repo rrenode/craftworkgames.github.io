@@ -8,7 +8,7 @@ description: A Spritesheet is a wrapper around a Texture2DAtlas with methods for
 import AdventurerSpriteSheet from './adventurer.png'
 import AdventurerAttackFrames from './attack-frames.png'
 
-A `SpriteSheet` is a wrapper around a [Texture2DAtlas](/docs/features/texture-handling/texture2datlas/texture2datlas) that provides additional methods for defining frame based animations based on the regions within the `Texture2DAtlas`.  
+A `SpriteSheet` is a wrapper around a [Texture2DAtlas](/docs/features/texture-handling/texture2datlas/texture2datlas.md) that provides additional methods for defining frame based animations based on the regions within the `Texture2DAtlas`.  
 
 Take a look at the following example texture atlas of an adventurer character.
 
@@ -35,7 +35,7 @@ We can see that this texture atlas has 16 separate regions, some of which can be
 Knowing the regions that represent our frames of animation, we can use a `SpriteSheet` to define the animations.
 
 ## Using `SpriteSheet`
-To create a `SpriteSheet` you first need to create a [Texture2DAtlas](/docs/features/texture-handling/texture2datlas/texture2datlas), then you use that in the constructor to create the `SpriteSheet`.
+To create a `SpriteSheet` you first need to create a [Texture2DAtlas](/docs/features/texture-handling/texture2datlas/texture2datlas.md), then you use that in the constructor to create the `SpriteSheet`.
 
 ```cs
 private SpriteSheet _spriteSheet;

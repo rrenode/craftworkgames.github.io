@@ -6,11 +6,20 @@ description: A Texture2DAtlas is a 2D texture atlas that contains a collection o
 image: ./cards.png
 ---
 
+import PlayingCards from './cards.png'
+
 In the [previous](../texture2dregion/texture2dregion.md) feature article we discussed what a `Texture2DRegion` is.  When you combine all the texture regions into a single collection, this is called a texture atlas. By using a texture atlas it gives us an easy way to create and manage our collection of regions
 
 Let's take a look at the image of all the cards again.
 
-<figure>![Packed Texture of playing cards](./cards.png)<br/><figcaption><small>[Playing Cards Pack](https://kenney.nl/assets/playing-cards-pack) by [Kenney](www.kenney.nl); Licensed under CreativeCommons Zero, CC0</small></figcaption></figure>
+<figure>
+    <img src={PlayingCards} style={{width: '100%', imageRendering: 'pixelated'}} alt="Packed Texture of playing cards"/>
+    <figcaption>
+        <small>
+            <a href="https://kenney.nl/assets/playing-cards-pack">Playing Cards Pack</a> by <a href="https://www.kenney.nl">Kenney</a>; Licensed under CreativeCommons Zero, CC0
+        </small>
+    </figcaption>
+</figure>
 
 Let's recreate the texture regions we did in the previous article, but this time using a `Texture2DAtlas`.
 

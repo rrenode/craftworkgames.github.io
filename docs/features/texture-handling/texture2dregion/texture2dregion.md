@@ -6,9 +6,18 @@ description: A Texture2DRegion is a subregion of a texture.
 image: ./result.png
 ---
 
+import PlayingCards from './cards.png'
+
 A `Texture2DRegion` is a subregion of a texture, typically used for rendering sprites from a texture atlas or sprite sheet.  For instance, take the following image of playing cards.
 
-<figure>![Packed Texture of playing cards](./cards.png)<br/><figcaption><small>[Playing Cards Pack](https://kenney.nl/assets/playing-cards-pack) by [Kenney](www.kenney.nl); Licensed under CreativeCommons Zero, CC0</small></figcaption></figure>
+<figure>
+    <img src={PlayingCards} style={{width: '100%', imageRendering: 'pixelated'}} alt="Packed Texture of playing cards"/>
+    <figcaption>
+        <small>
+            <a href="https://kenney.nl/assets/playing-cards-pack">Playing Cards Pack</a> by <a href="https://www.kenney.nl">Kenney</a>; Licensed under CreativeCommons Zero, CC0
+        </small>
+    </figcaption>
+</figure>
 
 In MonoGame, this would be loaded as a single `Texture2D` image, however we would want to define the individual boundaries within the image that represent each individual card. For instance, the top-left corner of the Ace of Hearts is at x:11 y:3 and has a width of 42px and a height of 60px.  So we can define the rectangular boundary of this card in the overall texture as `new Rectangle(11, 3, 42, 60)`
 

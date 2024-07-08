@@ -4,6 +4,7 @@ sidebar_label: Sprite
 title: Sprite
 description: A drawable region of a Texture2D with additional properties for rendering such as  scale, rotation, and color
 ---
+import PlayingCards from './cards.png'
 
 ## Overview
 
@@ -12,7 +13,14 @@ Using a `Texture2DAtlas` to create and manage our `Texture2DRegion`s is nice but
 ## Usage
 Let's take the cards image from the previous two examples and use them to create and render a sprite.
 
-<figure>![Packed Texture of playing cards](./cards.png)<br/><figcaption><small>[Playing Cards Pack](https://kenney.nl/assets/playing-cards-pack) by [Kenney](www.kenney.nl); Licensed under CreativeCommons Zero, CC0</small></figcaption></figure>
+<figure>
+    <img src={PlayingCards} style={{width: '100%', imageRendering: 'pixelated'}} alt="Packed Texture of playing cards"/>
+    <figcaption>
+        <small>
+            <a href="https://kenney.nl/assets/playing-cards-pack">Playing Cards Pack</a> by <a href="https://www.kenney.nl">Kenney</a>; Licensed under CreativeCommons Zero, CC0
+        </small>
+    </figcaption>
+</figure>
 
 We'll start with the usual of loading the `Texture2D` and using that to create a `Texture2DAtlas` with a region that represents the Ace of Hearts card
 

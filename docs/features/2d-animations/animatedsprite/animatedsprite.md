@@ -7,7 +7,7 @@ description: An AnimatedSprite encapsulates a SpriteSheet with methods to set th
 
 import AdventurerSpriteSheet from './adventurer.png'
 
-In the [previous document](/docs/features/2d-animations/spritesheet/spritesheet) about `SpriteSheets` we went over how to create a `SpriteSheet`, define animations, and retrieve the animations from it.  Doing this only gives use the `SpriteSheetAnimation` instance for that animation, which we then have to create an `AnimationController` with to manage that single animation.
+In the [previous document](/docs/features/2d-animations/spritesheet/spritesheet.md) about `SpriteSheets` we went over how to create a `SpriteSheet`, define animations, and retrieve the animations from it.  Doing this only gives use the `SpriteSheetAnimation` instance for that animation, which we then have to create an `AnimationController` with to manage that single animation.
 
 However, typically a `SpriteSheet` is going to contain several animations related to a single concept, like all of the animations for a player.  To better manage controlling the animations from the `SpriteSheet` we can use the `AnimatedSprite` class.
 
