@@ -114,13 +114,36 @@ const fontsCategory = {
 }
 
 
+////////////////////////////////////////////////////////////////////////////////
+/// "User Interface" features category
+////////////////////////////////////////////////////////////////////////////////
+const uiCategory = {
+  type: 'category',
+  label: 'User Interface',
+  items: [
+    {
+      type: 'doc',
+      id: 'features/ui/gum/gum-doc-1/gum-doc-1'
+    },
+    {
+      type: 'doc',
+      id: 'features/ui/gum/gum-doc-2/gum-doc-2'
+    },
+    {
+      type: 'doc',
+      id: 'features/ui/gum/gum-doc-3/gum-doc-3'
+    }
+  ]
+}
+
 const features = {
   type: 'category',
   label: 'Features',
   items: [
     textureHandlingCategory,
     _2dAnimationsCategory,
-    fontsCategory
+    fontsCategory,
+    uiCategory
   ]
 };
 
