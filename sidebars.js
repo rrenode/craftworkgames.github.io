@@ -130,14 +130,29 @@ const inputCategory = {
   ]
 }
 
+////////////////////////////////////////////////////////////////////////////////
+/// "User Interface" features category
+////////////////////////////////////////////////////////////////////////////////
+const uiCategory = {
+  type: 'category',
+  label: 'User Interface',
+  items: [
+    {
+      type: 'doc',
+      id: 'features/ui/gum/gum-forms/gum-forms'
+    }
+  ]
+}
+
 const features = {
   type: 'category',
   label: 'Features',
   items: [
     textureHandlingCategory,
     _2dAnimationsCategory,
-    fontsCategory,
-    inputCategory
+    fontsCategory,    
+    inputCategory,
+    uiCategory
   ]
 };
 
