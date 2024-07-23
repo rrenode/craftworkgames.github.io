@@ -149,9 +149,9 @@ protected override void LoadContent()
                 .AddFrame(5, TimeSpan.FromSeconds(0.1));
     });
 
-    SpriteSheetAnimation attackAnimation = _spriteSheet.GetAnimation("idle");
+    SpriteSheetAnimation attackAnimation = _spriteSheet.GetAnimation("attack");
     //highlight-next-line
-    _attackAnimationController = new AnimationController(idleAnimation);
+    _attackAnimationController = new AnimationController(attackAnimation);
 }
 ```
 
