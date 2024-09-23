@@ -148,6 +148,34 @@ const cameraCategory = {
   ]
 }
 
+////////////////////////////////////////////////////////////////////////////////
+/// "Collections" features category
+////////////////////////////////////////////////////////////////////////////////
+const collectionsCategory = {
+  type: 'category',
+  label: 'Collections',
+  items: [
+    {
+      type: 'doc',
+      id: 'features/collections/collections'
+    }
+  ]
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+/// "ObjectPool" features category
+////////////////////////////////////////////////////////////////////////////////
+const objectPoolCategory = {
+  type: 'category',
+  label: 'Object Pooling',
+  items: [
+    {
+      type: 'doc',
+      id: 'features/object-pooling/object-pooling'
+    }
+  ]
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 /// "User Interface" features category
@@ -172,6 +200,8 @@ const features = {
     fontsCategory,    
     inputCategory,
     cameraCategory,
+    collectionsCategory,
+    objectPoolCategory,
     uiCategory
   ]
 };
