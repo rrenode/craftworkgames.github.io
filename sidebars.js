@@ -333,7 +333,11 @@ const features = {
     contentManagerCategory,
     entitiesCategory,
     particlesCategory,
-    sceneGraphsCategory
+    sceneGraphsCategory,
+    screenManagement,
+    serializationCategory,
+    tweeningCategory,
+    tiledCategory
   ]
 };
 
