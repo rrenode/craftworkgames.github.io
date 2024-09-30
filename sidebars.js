@@ -191,6 +191,132 @@ const uiCategory = {
   ]
 }
 
+////////////////////////////////////////////////////////////////////////////////
+/// "Collisions" category
+////////////////////////////////////////////////////////////////////////////////
+const collisionCategory = {
+  type: 'category',
+  label: 'Collisions',
+  items: [
+    {
+      type: 'doc',
+      id: 'features/collision/collision'
+    }
+  ]
+}
+
+////////////////////////////////////////////////////////////////////////////////
+/// "ContentManager" category
+////////////////////////////////////////////////////////////////////////////////
+const contentManagerCategory = {
+  type: 'category',
+  label: 'ContentManager',
+  items: [
+    {
+      type: 'doc',
+      id: 'features/contentmanager/contentManager-extensions'
+    }
+  ]
+}
+
+////////////////////////////////////////////////////////////////////////////////
+/// "Entities" category
+////////////////////////////////////////////////////////////////////////////////
+const entitiesCategory = {
+  type: 'category',
+  label: 'Entities',
+  items: [
+    {
+      type: 'doc',
+      id: 'features/entities/entities'
+    }
+  ]
+}
+
+////////////////////////////////////////////////////////////////////////////////
+/// "Particles" category
+////////////////////////////////////////////////////////////////////////////////
+const particlesCategory = {
+  type: 'category',
+  label: 'Particles',
+  items: [
+    {
+      type: 'doc',
+      id: 'features/particles/particles'
+    }
+  ]
+}
+
+////////////////////////////////////////////////////////////////////////////////
+/// "Scene Graphs" category
+////////////////////////////////////////////////////////////////////////////////
+const sceneGraphsCategory = {
+  type: 'category',
+  label: 'Scene Graphs',
+  items: [
+    {
+      type: 'doc',
+      id: 'features/scene-graphs/scene-graphs'
+    }
+  ]
+}
+
+////////////////////////////////////////////////////////////////////////////////
+/// "Screen Management" category
+////////////////////////////////////////////////////////////////////////////////
+const screenManagement = {
+  type: 'category',
+  label: 'Screen Management',
+  items: [
+    {
+      type: 'doc',
+      id: 'features/screen-management/screen-management'
+    }
+  ]
+}
+
+////////////////////////////////////////////////////////////////////////////////
+/// "Serialization" category
+////////////////////////////////////////////////////////////////////////////////
+const serializationCategory = {
+  type: 'category',
+  label: 'Serialization',
+  items: [
+    {
+      type: 'doc',
+      id: 'features/serialization/serialization'
+    }
+  ]
+}
+
+////////////////////////////////////////////////////////////////////////////////
+/// "Tweening" category
+////////////////////////////////////////////////////////////////////////////////
+const tweeningCategory = {
+  type: 'category',
+  label: 'Tweening',
+  items: [
+    {
+      type: 'doc',
+      id: 'features/tweening/tweening'
+    }
+  ]
+}
+
+////////////////////////////////////////////////////////////////////////////////
+/// "Tiled" category
+////////////////////////////////////////////////////////////////////////////////
+const tiledCategory = {
+  type: 'category',
+  label: 'Tiled',
+  items: [
+    {
+      type: 'doc',
+      id: 'features/tiled/tiled'
+    }
+  ]
+}
+
 const features = {
   type: 'category',
   label: 'Features',
@@ -202,7 +328,12 @@ const features = {
     cameraCategory,
     collectionsCategory,
     objectPoolCategory,
-    uiCategory
+    uiCategory,
+    collisionCategory,
+    contentManagerCategory,
+    entitiesCategory,
+    particlesCategory,
+    sceneGraphsCategory
   ]
 };
 
