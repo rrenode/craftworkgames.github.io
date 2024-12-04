@@ -84,7 +84,7 @@ protected override void Initialize()
 ```
 
 ## Using the `InputListenerComponent`
-**MonoGame.Extended** also provides an `InputListenerComponent` that can be created and added to the game component collection to have it automatically updated for you each frame.  Using it is similar to using hte individual listeners, you just have to create an instance of it and add it to the components collection
+**MonoGame.Extended** also provides an `InputListenerComponent` that can be created and added to the game component collection to have it automatically updated for you each frame.  Using it is similar to using the individual listeners, you just have to create an instance of it and add it to the components collection
 
 ```cs
 // highlight-next-line
